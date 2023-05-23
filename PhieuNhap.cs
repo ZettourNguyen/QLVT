@@ -14,7 +14,8 @@ namespace QLVT
 {
     public partial class PhieuNhap : UserControl
     {
-        string connectionString = @"Data Source=LAPTOP-5KFMFC55;Initial Catalog=QLVT;Persist Security Info=True;User ID=sa;Password=123";
+        string connectionString = @"Data Source=" + Program.serverName + ";Initial Catalog=QLVT;Persist Security Info=True;User ID=" + Program.loginName + ";Password=" + Program.loginPassword;
+
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;
