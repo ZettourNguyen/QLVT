@@ -100,5 +100,19 @@ namespace QLVT
             controlPn.Controls.Clear();
             controlPn.Controls.Add(form);
         }
+        public void enableButtons(int t)
+        {
+            if(t == 0) 
+            {
+                btnQuanLy.Enabled = false;
+                btnBaoCao.Enabled = false;
+            }
+            else
+            {
+                btnQuanLy.Enabled = true;
+                btnBaoCao.Enabled = true;
+            }
+            
+        }
     }
 }

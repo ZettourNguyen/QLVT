@@ -44,8 +44,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.hethong = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnQuanLy = new System.Windows.Forms.Button();
+            this.btnBaoCao = new System.Windows.Forms.Button();
             this.pnHETHONG.SuspendLayout();
             this.pnControl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -257,45 +257,47 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.hethong);
-            this.flowLayoutPanel2.Controls.Add(this.button1);
-            this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.btnQuanLy);
+            this.flowLayoutPanel2.Controls.Add(this.btnBaoCao);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, -2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1362, 49);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
-            // button1
+            // btnQuanLy
             // 
-            this.button1.BackColor = System.Drawing.Color.YellowGreen;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderSize = 5;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(146, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 46);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnQuanLy.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnQuanLy.Enabled = false;
+            this.btnQuanLy.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnQuanLy.FlatAppearance.BorderSize = 5;
+            this.btnQuanLy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnQuanLy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLy.Location = new System.Drawing.Point(146, 0);
+            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQuanLy.Name = "btnQuanLy";
+            this.btnQuanLy.Size = new System.Drawing.Size(146, 46);
+            this.btnQuanLy.TabIndex = 7;
+            this.btnQuanLy.Text = "Quan Ly";
+            this.btnQuanLy.UseVisualStyleBackColor = false;
+            this.btnQuanLy.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnBaoCao
             // 
-            this.button2.BackColor = System.Drawing.Color.YellowGreen;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatAppearance.BorderSize = 5;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(292, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 46);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnBaoCao.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnBaoCao.Enabled = false;
+            this.btnBaoCao.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnBaoCao.FlatAppearance.BorderSize = 5;
+            this.btnBaoCao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCao.Location = new System.Drawing.Point(292, 0);
+            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(146, 46);
+            this.btnBaoCao.TabIndex = 8;
+            this.btnBaoCao.Text = "BaoCao";
+            this.btnBaoCao.UseVisualStyleBackColor = false;
             // 
             // FormChinh
             // 
@@ -335,8 +337,8 @@
         public System.Windows.Forms.Label HOTEN;
         private System.Windows.Forms.Button hethong;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnQuanLy;
+        private System.Windows.Forms.Button btnBaoCao;
         public System.Windows.Forms.Panel panel2;
     }
 }

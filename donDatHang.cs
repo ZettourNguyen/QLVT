@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace QLVT
 {
@@ -340,7 +341,7 @@ namespace QLVT
             cbbMasoDDH.Enabled = true;
             cbbMaVT.Enabled = true;
             cbbMaKho.Enabled = true;
-            textMaNV.Enabled = true;
+            textMaNV.Text = Program.RegexMANHANVIEN().ToString();
             textDG.Enabled = true;
             textNCC.Enabled = true;
             textSL.Enabled = true;
@@ -488,17 +489,33 @@ namespace QLVT
             textNCC.Enabled = false;
             textSL.Enabled = false;
             dateTimePicker.Enabled = false;
-            btnGhiCTDDH.Enabled = false;
-            btnDelCTDDH.Enabled = false;
-            btnAddCTDDH.Enabled = false;
-            ghiBtn.Enabled = false;
-            xoaBtn.Enabled = false;
-            themBtn.Enabled = true;
+
+
+
             btnOK.Visible = false;
             btnHuy.Visible = false;
-            action = "";
             //tra lai date cua row dang dc chon
             LoadSelectedRowDateToDateTimePicker();
+            if (action.Equals("AddDDH"))
+            {
+                btnGhiCTDDH.Enabled = false;
+                btnDelCTDDH.Enabled = false;
+                btnAddCTDDH.Enabled = false;
+                ghiBtn.Enabled = false;
+                xoaBtn.Enabled = false;
+                themBtn.Enabled = true;
+            }
+            else
+            {
+                btnGhiCTDDH.Enabled = true;
+                btnDelCTDDH.Enabled = true;
+                btnAddCTDDH.Enabled = true;
+                ghiBtn.Enabled = true;
+                xoaBtn.Enabled = true;
+                themBtn.Enabled = false;
+            }
+            action = "";
+
         }
 
         private void btnGhiCTDDH_Click(object sender, EventArgs e)
@@ -531,7 +548,7 @@ namespace QLVT
                 cmd.Parameters.AddWithValue("@valueMASODDH", cbbMasoDDH.Text.Trim());
                 cmd.Parameters.AddWithValue("@valueNGAY", dateTimePicker.Text.Trim());
                 cmd.Parameters.AddWithValue("@valueNHACC", textNCC.Text.Trim());
-                cmd.Parameters.AddWithValue("@valueMANV", textMaNV.Text.Trim());   //MANV TU DONG DUNG CUA ACC LOGIN
+                cmd.Parameters.AddWithValue("@valueMANV", textMaNV.Text);   //MANV TU DONG DUNG CUA ACC LOGIN
                 cmd.Parameters.AddWithValue("@VALUEMAKHO", cbbMaKho.Text.Trim());
                 cmd.ExecuteNonQuery();
                 // THEM VAO CTDDH
@@ -754,5 +771,6 @@ namespace QLVT
                 undoBtn.Enabled = true;
             }
         }
+        
     }
 }

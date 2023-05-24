@@ -25,16 +25,19 @@ namespace QLVT
             Program.formChinh.MANHANVIEN.Text = "MÃ NHÂN VIÊN:";
             Program.formChinh.HOTEN.Text = "HỌ TÊN:";
             Program.formChinh.NHOM.Text = "VAI TRÒ:";
+            Program.formChinh.enableButtons(0);
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void TAOTAIKHOAN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void THOAT_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
     }

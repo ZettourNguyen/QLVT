@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using System;
+using System.Text.RegularExpressions;
 
 namespace QLVT
 {
@@ -247,6 +248,20 @@ namespace QLVT
 
             }
         }
+        public static int RegexMANHANVIEN()
+        {
+            string input = Program.formChinh.MANHANVIEN.Text;
+            Match match = Regex.Match(input, @"\d+");
+            if (match.Success)
+            {
+                int number = int.Parse(match.Value);
+                return number;
+            }
+            return 0;
+
+        }
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

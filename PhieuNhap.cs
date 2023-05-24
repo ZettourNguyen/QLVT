@@ -594,7 +594,7 @@ namespace QLVT
             cbbMasoDDH.Enabled = true;
             cbbMaVT.Enabled = true;
             cbbMaKho.Enabled = true;
-            textMaNV.Enabled = true;
+            textMaNV.Text = Program.RegexMANHANVIEN().ToString();
             textDG.Enabled = true;
             cbbMasoDDH.Enabled = true;
             textSL.Enabled = true;

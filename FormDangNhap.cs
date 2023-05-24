@@ -158,7 +158,7 @@ namespace QLVT
 
             /* Step 6*/
             this.Visible = false;
-            //Program.formChinh.enableButtons();
+            Program.formChinh.enableButtons(1);
         }
 
         private void btnTHOAT_Click(object sender, EventArgs e)
