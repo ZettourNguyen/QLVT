@@ -194,7 +194,12 @@ namespace QLVT
                 xoaBtn.Enabled = true;
                 themBtn.Enabled = false;
 
-
+                if (Program.userName != textMaNV.Text)
+                {
+                    btnGhiCTDDH.Enabled = false;
+                    btnDelCTDDH.Enabled = false;
+                    btnAddCTDDH.Enabled = false;
+                }
             }
 
 
@@ -225,6 +230,12 @@ namespace QLVT
                       "AND [MAVT] = '" ;
                 textBox1.Text = undoUpdateQueryCTDDH;
                 oldMAVT = valueMaVT;
+            }
+            if (Program.userName != textMaNV.Text)
+            {
+                btnGhiCTDDH.Enabled = false;
+                btnDelCTDDH.Enabled = false;
+                btnAddCTDDH.Enabled = false;
             }
         }
 
@@ -349,6 +360,8 @@ namespace QLVT
             dateTimePicker.Text = DateTime.Now.ToString();
             btnAddCTDDH.Enabled = false;
             //
+            //
+
             action = "AddDDH";
         }
         private void xoaBtn_Click(object sender, EventArgs e)
@@ -388,7 +401,6 @@ namespace QLVT
         }
         private void ghiBtn_Click(object sender, EventArgs e)
         {
-            action = "EditDDH";
             btnOK.Visible = true;
             btnHuy.Visible = true;
 
@@ -401,6 +413,10 @@ namespace QLVT
             ghiBtn.Enabled = false;
             btnDelCTDDH.Enabled = false;
             btnGhiCTDDH.Enabled = false;
+
+
+            action = "EditDDH";
+
         }
 
 
@@ -420,6 +436,7 @@ namespace QLVT
                 ghiBtn.Enabled = false;
                 btnDelCTDDH.Enabled = false;
                 btnGhiCTDDH.Enabled = false;
+            
 
             action = "AddCTDDH";
             }
@@ -459,25 +476,25 @@ namespace QLVT
         string action = "";
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (action.Equals("AddDDH"))
+            if (checkNull())
             {
-                themDDH();
+                if (action.Equals("AddDDH"))
+                {
+                    themDDH();
+                }
+                if (action.Equals("AddCTDDH"))
+                {
+                    themCTDDH();
+                }
+                if (action.Equals("EditCTDDH"))
+                {
+                    editCTDDH();
+                }
+                if (action.Equals("EditDDH"))
+                {
+                    editDDH();
+                }
             }
-            if (action.Equals("AddCTDDH"))
-            {
-                themCTDDH();
-            }
-            if (action.Equals("EditCTDDH"))
-            {
-                editCTDDH();
-            }
-            if (action.Equals("EditDDH"))
-            {
-                editDDH();
-            }
-
-
-
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
@@ -522,7 +539,6 @@ namespace QLVT
         {
             cbbMaVT.Enabled = true;
             textSL.Enabled = true; textDG.Enabled = true;
-            action = "EditCTDDH";
             btnOK.Visible = true;
             btnHuy.Visible = true;
 
@@ -532,6 +548,10 @@ namespace QLVT
             ghiBtn.Enabled = false;
             btnDelCTDDH.Enabled = false;
             btnGhiCTDDH.Enabled = false;
+
+
+            action = "EditCTDDH";
+
         }
 
         // ===func them sua xoa
@@ -771,6 +791,51 @@ namespace QLVT
                 undoBtn.Enabled = true;
             }
         }
-        
+
+        private bool checkNull()
+        {
+            if (cbbMasoDDH.Text == "")
+            {
+                MessageBox.Show("Không thể bỏ trống mã đơn hàng", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (cbbMasoDDH.Text.Length > 8)
+            {
+                MessageBox.Show("Mã đơn đặt hàng không quá 8 kí tự", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (textMaNV.Text == "")
+            {
+                MessageBox.Show("Không thể bỏ trống mã nhân viên", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (textNCC.Text == "")
+            {
+                MessageBox.Show("Không thể bỏ trống nhà cung cấp", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (textNCC.Text.Length > 100)
+            {
+                MessageBox.Show("Tên nhà cung cấp không quá 100 kí tự", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (cbbMaKho.Text == "")
+            {
+                MessageBox.Show("Không thể bỏ trống mã kho", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (cbbMaVT.Text == "")
+            {
+                MessageBox.Show("Không thể bỏ trống mã vật tư", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            if (int.Parse(textSL.Text) < 0 || int.Parse(textDG.Text) < 0)
+            {
+                MessageBox.Show("Không thể nhỏ hơn 1", "Thông báo", MessageBoxButtons.OK);
+                return false;
+            }
+            return true;
+
+        }
     }
 }
