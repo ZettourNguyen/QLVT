@@ -347,6 +347,7 @@
             // 
             // cbbMaVT
             // 
+            this.cbbMaVT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbMaVT.Enabled = false;
             this.cbbMaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaVT.FormattingEnabled = true;

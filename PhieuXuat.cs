@@ -254,6 +254,14 @@ namespace QLVT
                 btnDelCTPN.Enabled = true;
                 xoaBtn.Enabled = true;
                 themBtn.Enabled = false;
+                if (Program.userName != textMaNV.Text)
+                {
+                    btnAddCTPN.Enabled = false;
+                    btnDelCTPN.Enabled = false;
+                    btnGhiCTPN.Enabled = false;
+                    xoaBtn.Enabled = false;
+                    ghiBtn.Enabled = false;
+                }
             }
         }
 

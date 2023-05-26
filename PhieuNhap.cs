@@ -14,7 +14,10 @@ namespace QLVT
 {
     public partial class PhieuNhap : UserControl
     {
-        string connectionString = @"Data Source=" + Program.serverName + ";Initial Catalog=QLVT;Persist Security Info=True;User ID=" + Program.loginName + ";Password=" + Program.loginPassword;
+        string connectionString = @"Data Source=" + Program.serverName + ";" +
+            "Initial Catalog=QLVT;Persist Security Info=True;" +
+            "User ID=" + Program.loginName + ";" +
+            "Password=" + Program.loginPassword;
 
         SqlConnection con;
         SqlCommand cmd;
@@ -224,6 +227,24 @@ namespace QLVT
                 textMaNV.Text = valueMaNV;
                 cbbMaKho.Text = valueMaKho;
 
+                try
+                {
+                    con.Open();
+                    cmd = new SqlCommand("SELECT [mavt] FROM [ctddh] where masoDDH = '"+cbbMasoDDH.Text+"'", con);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    cbbMaVT.Items.Clear();
+                    while (reader.Read())
+                    {
+                        string item = reader.GetString(0).Trim();
+                        cbbMaVT.Items.Add(item);
+                    }
+                    con.Close();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+
                 // xuat chi tiet don dat hang theo maPN
                 DataTable dt = new DataTable();
                 CTPNview.DataSource = null;
@@ -273,6 +294,14 @@ namespace QLVT
                 btnDelCTPN.Enabled = true;
                 xoaBtn.Enabled = true;
                 themBtn.Enabled = false;
+                if (Program.userName != textMaNV.Text)
+                {
+                    btnAddCTPN.Enabled = false;
+                    btnDelCTPN.Enabled = false;
+                    btnGhiCTPN.Enabled = false;
+                    xoaBtn.Enabled = false;
+                    ghiBtn.Enabled = false;
+                }
             }
         }
 
@@ -308,6 +337,7 @@ namespace QLVT
                           "AND [MAVT] = '" ;
                     
                 oldMAVT = valueMaVT;
+
             }
         }
 
@@ -527,18 +557,17 @@ namespace QLVT
         private void editCTPN()
         {
             con.Open();
-            SqlTransaction transaction = con.BeginTransaction();
             try
             {
                 string query = "UPDATE CTPN SET [SOLUONG] = @value1, [DONGIA] = @value2, [MAVT] = @value3  WHERE [MAPN] = @value0 and [MAVT] = @value01;";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
+                SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@value1", textSL.Text.Trim());
                 cmd.Parameters.AddWithValue("@value2", textDG.Text.Trim());
                 cmd.Parameters.AddWithValue("@value3", cbbMaVT.Text.Trim());
                 cmd.Parameters.AddWithValue("@value01", oldMAVT.Trim());
                 cmd.Parameters.AddWithValue("@value0", cbbMaPN.Text.Trim());
                 cmd.ExecuteNonQuery();
-                transaction.Commit();
+
                 MessageBox.Show("update thanh cong");
 
                 //undo
@@ -548,7 +577,6 @@ namespace QLVT
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
                 MessageBox.Show("update that bai");
                 textBox1.Text = ex.ToString();
             }
@@ -557,12 +585,11 @@ namespace QLVT
         private void editPN()
         {
             con.Open();
-            SqlTransaction transaction = con.BeginTransaction();
             try
             {
                 //string query = "INSERT INTO DATHANG ([MASODDH],[NGAY],[NHACC],[MANV],[MAKHO]) VALUES (@valueMASODDH, @valueNGAY, @valueNHACC, @valueMANV, @valueMAKHO)";
                 string query = "UPDATE PHIEUNHAP set [NGAY] = @value1,[MASODDH] = @value2,[MANV] = @value3,[makho] = @value4 WHERE [mapn] = @value0;";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
+                SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@value1", dateTimePicker.Text);
                 cmd.Parameters.AddWithValue("@value2", cbbMasoDDH.Text);
                 cmd.Parameters.AddWithValue("@value3", textMaNV.Text);
@@ -570,7 +597,6 @@ namespace QLVT
                 cmd.Parameters.AddWithValue("@value0", cbbMaPN.Text);
 
                 cmd.ExecuteNonQuery();
-                transaction.Commit();
                 MessageBox.Show("update thanh cong");
 
                 //undo
@@ -579,7 +605,6 @@ namespace QLVT
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
                 MessageBox.Show("update that bai");
                 textBox1.Text = ex.ToString();
             }
@@ -594,7 +619,7 @@ namespace QLVT
             cbbMasoDDH.Enabled = true;
             cbbMaVT.Enabled = true;
             cbbMaKho.Enabled = true;
-            textMaNV.Text = Program.RegexMANHANVIEN().ToString();
+            textMaNV.Text = Program.userName;
             textDG.Enabled = true;
             cbbMasoDDH.Enabled = true;
             textSL.Enabled = true;
@@ -738,19 +763,16 @@ namespace QLVT
             else
             {
                 con.Open();
-                SqlTransaction transaction = con.BeginTransaction();
                 try
                 {
                     String cauTruyVanHoanTac = undoList.Pop().ToString();
                     string query = cauTruyVanHoanTac;
-                    SqlCommand cmd = new SqlCommand(query, con, transaction);
+                    SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
-                    transaction.Commit();
                     MessageBox.Show("undo thành công", "Thông báo", MessageBoxButtons.OK);
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
                     textBox1.Text = ex.ToString();

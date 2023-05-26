@@ -40,5 +40,10 @@ namespace QLVT
             System.Windows.Forms.Application.Exit();
 
         }
+
+        private void QuanLyTk_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -94,6 +94,7 @@
             this.Controls.Add(this.DANGNHAP);
             this.Name = "QuanLyTk";
             this.Size = new System.Drawing.Size(1236, 714);
+            this.Load += new System.EventHandler(this.QuanLyTk_Load);
             this.ResumeLayout(false);
 
         }

@@ -200,9 +200,9 @@
             this.MANHANVIEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.MANHANVIEN.Location = new System.Drawing.Point(22, 4);
             this.MANHANVIEN.Name = "MANHANVIEN";
-            this.MANHANVIEN.Size = new System.Drawing.Size(145, 25);
+            this.MANHANVIEN.Size = new System.Drawing.Size(151, 25);
             this.MANHANVIEN.TabIndex = 0;
-            this.MANHANVIEN.Text = "MANHANVIEN";
+            this.MANHANVIEN.Text = "MANHANVIEN:";
             // 
             // HOTEN
             // 
@@ -261,7 +261,7 @@
             this.flowLayoutPanel2.Controls.Add(this.btnBaoCao);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, -2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1362, 49);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1197, 49);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // btnQuanLy
@@ -311,7 +311,7 @@
             this.Name = "FormChinh";
             this.Text = "Trang Chu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormChinh_Load);
             this.pnHETHONG.ResumeLayout(false);
             this.pnControl.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

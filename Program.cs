@@ -137,20 +137,11 @@ namespace QLVT
         public static Kho formKho;
         //
         public static donDatHang formDonDatHang;
-        //public static FormChonKhoHang formChonKhoHang;
+        
         public static PhieuNhap formPhieuNhap;
-        //
-        //public static FormChonDonDatHang formChonDonDatHang;
-        //public static FormChonChiTietDonHang formChonChiTietDonHang;
+        
         public static PhieuXuat formPhieuXuat;
-        //
-        //public static FormDanhSachNhanVien formDanhSachNhanVien;
-        //public static FormDanhSachVatTu formDanhSachVatTu;
-        //public static FormDonHangKhongPhieuNhap formDonHangKhongPhieuNhap;
-        //
-        //public static FormChiTietSoLuongTriGiaHangHoaNhapXuat formChiTietSoLuongTriGiaHangHoaNhapXuat;
-        //public static FormHoatDongNhanVien formHoatDongNhanVien;
-        //public static FormTongHopNhapXuat formTongHopNhapXuat;
+        
         /*****************************************************
          * mở kết nối tới server 
          * @return trả về 1 nếu thành công
@@ -248,18 +239,7 @@ namespace QLVT
 
             }
         }
-        public static int RegexMANHANVIEN()
-        {
-            string input = Program.formChinh.MANHANVIEN.Text;
-            Match match = Regex.Match(input, @"\d+");
-            if (match.Success)
-            {
-                int number = int.Parse(match.Value);
-                return number;
-            }
-            return 0;
-
-        }
+        
 
 
         /// <summary>
@@ -272,6 +252,7 @@ namespace QLVT
             Application.SetCompatibleTextRenderingDefault(false);
             Program.formChinh = new FormChinh();
             Application.Run(formChinh);
+
         }
     }
 }

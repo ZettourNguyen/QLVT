@@ -124,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "FormDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.ResumeLayout(false);

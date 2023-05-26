@@ -114,5 +114,14 @@ namespace QLVT
             }
             
         }
+
+        private void FormChinh_Load(object sender, EventArgs e)
+        {
+            QuanLyTk form = new QuanLyTk();
+            form.Dock = DockStyle.Fill;
+            pnHETHONG.Controls.Clear();
+            pnHETHONG.Controls.Add(form);
+            
+        }
     }
 }

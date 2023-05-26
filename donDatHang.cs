@@ -199,6 +199,8 @@ namespace QLVT
                     btnGhiCTDDH.Enabled = false;
                     btnDelCTDDH.Enabled = false;
                     btnAddCTDDH.Enabled = false;
+                    xoaBtn.Enabled = false;
+                    ghiBtn.Enabled = false;
                 }
             }
 
@@ -352,7 +354,7 @@ namespace QLVT
             cbbMasoDDH.Enabled = true;
             cbbMaVT.Enabled = true;
             cbbMaKho.Enabled = true;
-            textMaNV.Text = Program.RegexMANHANVIEN().ToString();
+            textMaNV.Text = Program.userName;
             textDG.Enabled = true;
             textNCC.Enabled = true;
             textSL.Enabled = true;
