@@ -369,7 +369,7 @@ namespace QLVT
                 cmd.Parameters.AddWithValue("@valueMAPX", cbbMaPX.Text.Trim());
                 cmd.Parameters.AddWithValue("@valueNGAY", dateTimePicker.Text.Trim());
                 cmd.Parameters.AddWithValue("@valueHOTENKH", textName.Text.Trim());
-                cmd.Parameters.AddWithValue("@valueMANV", textMaNV.Text.Trim());   //MANV TU DONG DUNG CUA ACC LOGIN
+                cmd.Parameters.AddWithValue("@valueMANV", Program.userName);   //MANV TU DONG DUNG CUA ACC LOGIN
                 cmd.Parameters.AddWithValue("@VALUEMAKHO", cbbMaKho.Text.Trim());
                 cmd.ExecuteNonQuery();
                 // THEM VAO CTDDH
@@ -538,7 +538,7 @@ namespace QLVT
             textName.Enabled = true;
             cbbMaVT.Enabled = true;
             cbbMaKho.Enabled = true;
-            textMaNV.Enabled = true;
+            textMaNV.Enabled = false;
             textDG.Enabled = true;
             textName.Enabled = true;
             textSL.Enabled = true;
@@ -547,6 +547,7 @@ namespace QLVT
             dateTimePicker.Text = DateTime.Now.ToString();
             btnAddCTPN.Enabled = false;
             //
+            textMaNV.Text = Program.userName;
             action = "AddPX";
         }
 
