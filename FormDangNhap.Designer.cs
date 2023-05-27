@@ -43,34 +43,38 @@
             this.cmbCHINHANH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCHINHANH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbCHINHANH.FormattingEnabled = true;
-            this.cmbCHINHANH.Location = new System.Drawing.Point(310, 51);
+            this.cmbCHINHANH.Location = new System.Drawing.Point(232, 41);
+            this.cmbCHINHANH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCHINHANH.Name = "cmbCHINHANH";
-            this.cmbCHINHANH.Size = new System.Drawing.Size(282, 33);
+            this.cmbCHINHANH.Size = new System.Drawing.Size(212, 28);
             this.cmbCHINHANH.TabIndex = 62;
             this.cmbCHINHANH.SelectedIndexChanged += new System.EventHandler(this.cmbCHINHANH_SelectedIndexChanged);
             // 
             // txtMATKHAU
             // 
             this.txtMATKHAU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtMATKHAU.Location = new System.Drawing.Point(310, 153);
+            this.txtMATKHAU.Location = new System.Drawing.Point(232, 124);
+            this.txtMATKHAU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMATKHAU.Name = "txtMATKHAU";
-            this.txtMATKHAU.Size = new System.Drawing.Size(282, 30);
+            this.txtMATKHAU.Size = new System.Drawing.Size(212, 26);
             this.txtMATKHAU.TabIndex = 60;
             // 
             // txtTAIKHOAN
             // 
             this.txtTAIKHOAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtTAIKHOAN.Location = new System.Drawing.Point(310, 102);
+            this.txtTAIKHOAN.Location = new System.Drawing.Point(232, 83);
+            this.txtTAIKHOAN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTAIKHOAN.Name = "txtTAIKHOAN";
-            this.txtTAIKHOAN.Size = new System.Drawing.Size(282, 30);
+            this.txtTAIKHOAN.Size = new System.Drawing.Size(212, 26);
             this.txtTAIKHOAN.TabIndex = 59;
             // 
             // btnTHOAT
             // 
             this.btnTHOAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnTHOAT.Location = new System.Drawing.Point(465, 233);
+            this.btnTHOAT.Location = new System.Drawing.Point(349, 189);
+            this.btnTHOAT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTHOAT.Name = "btnTHOAT";
-            this.btnTHOAT.Size = new System.Drawing.Size(124, 69);
+            this.btnTHOAT.Size = new System.Drawing.Size(93, 56);
             this.btnTHOAT.TabIndex = 58;
             this.btnTHOAT.Text = "Thoat";
             this.btnTHOAT.UseVisualStyleBackColor = true;
@@ -79,9 +83,10 @@
             // btnDANGNHAP
             // 
             this.btnDANGNHAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnDANGNHAP.Location = new System.Drawing.Point(310, 233);
+            this.btnDANGNHAP.Location = new System.Drawing.Point(232, 189);
+            this.btnDANGNHAP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDANGNHAP.Name = "btnDANGNHAP";
-            this.btnDANGNHAP.Size = new System.Drawing.Size(124, 69);
+            this.btnDANGNHAP.Size = new System.Drawing.Size(93, 56);
             this.btnDANGNHAP.TabIndex = 57;
             this.btnDANGNHAP.Text = "Dang Nhap";
             this.btnDANGNHAP.UseVisualStyleBackColor = true;
@@ -91,10 +96,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(168, 153);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.label1.Location = new System.Drawing.Point(126, 124);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 56;
             this.label1.Text = "Mat khau:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -103,19 +108,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(116, 99);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.label2.Location = new System.Drawing.Point(87, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 25);
+            this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 55;
             this.label2.Text = "Ten dang nhap:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.cmbCHINHANH);
             this.Controls.Add(this.txtMATKHAU);
             this.Controls.Add(this.txtTAIKHOAN);
@@ -123,6 +128,7 @@
             this.Controls.Add(this.btnDANGNHAP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";

@@ -73,6 +73,12 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTaoTk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaoTk.Designer.cs">
+      <DependentUpon>FormTaoTk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaoTk.resx">
+      <DependentUpon>FormTaoTk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>

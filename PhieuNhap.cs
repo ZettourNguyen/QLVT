@@ -547,7 +547,7 @@ namespace QLVT
             }
             catch (Exception ex)
             {
-                MessageBox.Show("them that bai", ex.Message);
+                MessageBox.Show(ex.Message,"Thông báo!");
                 textBox1.Text = ex.Message;
             }
             con.Close();
@@ -777,6 +777,21 @@ namespace QLVT
                 }
                 con.Close();
             }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbbMaVT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbMaPN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

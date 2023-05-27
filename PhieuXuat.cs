@@ -373,13 +373,7 @@ namespace QLVT
                 cmd.Parameters.AddWithValue("@VALUEMAKHO", cbbMaKho.Text.Trim());
                 cmd.ExecuteNonQuery();
                 // THEM VAO CTDDH
-                string queryCTDDH = "INSERT INTO CTPX ([MAPX],[MAVT],[SOLUONG],[DONGIA]) VALUES (@valueMAPX, @valueMAVT, @valueSL, @valueDG)";
-                SqlCommand cmdCTDDH = new SqlCommand(queryCTDDH, con, transaction);
-                cmdCTDDH.Parameters.AddWithValue("@valueMAPX", cbbMaPX.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueMAVT", cbbMaVT.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueSL", textSL.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueDG", textDG.Text.Trim());
-                cmdCTDDH.ExecuteNonQuery();
+                
 
                 transaction.Commit();
                 MessageBox.Show("them thanh cong");
@@ -421,19 +415,17 @@ namespace QLVT
         private void themCTPX()
         {
             con.Open();
-            SqlTransaction transaction = con.BeginTransaction();
 
             try
             {
-                string queryCTDDH = "INSERT INTO CTPX ([MAPX],[MAVT],[SOLUONG],[DONGIA]) VALUES (@valueMAPX, @valueMAVT, @valueSL, @valueDG)";
-                SqlCommand cmdCTDDH = new SqlCommand(queryCTDDH, con, transaction);
-                cmdCTDDH.Parameters.AddWithValue("@valueMAPX", cbbMaPX.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueMAVT", cbbMaVT.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueSL", textSL.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueDG", textDG.Text.Trim());
-                cmdCTDDH.ExecuteNonQuery();
 
-                transaction.Commit();
+                SqlCommand cmdCTDDH = new SqlCommand("AddChiTietPhieuXuat", con);
+                cmdCTDDH.CommandType = CommandType.StoredProcedure;
+                cmdCTDDH.Parameters.AddWithValue("@MAPX", cbbMaPX.Text.Trim());
+                cmdCTDDH.Parameters.AddWithValue("@MAVT", cbbMaVT.Text.Trim());
+                cmdCTDDH.Parameters.AddWithValue("@SOLUONG", textSL.Text.Trim());
+                cmdCTDDH.Parameters.AddWithValue("@DONGIA", textDG.Text.Trim());
+                cmdCTDDH.ExecuteNonQuery();
                 MessageBox.Show("them thanh cong");
 
                 btnOK.Visible = false;
@@ -462,8 +454,7 @@ namespace QLVT
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
-                MessageBox.Show("them that bai", ex.Message);
+                MessageBox.Show(ex.Message, "Thông báo");
                 textBox1.Text = ex.Message;
             }
             con.Close();
@@ -622,6 +613,11 @@ namespace QLVT
                         cmd.Parameters.AddWithValue("@valuePX", cbbMaPX.Text.Trim());
                         cmd.Parameters.AddWithValue("@valueVT", cbbMaVT.Text.Trim());
                         cmd.ExecuteNonQuery();
+
+                        SqlCommand updateVattu = new SqlCommand("UPDATE Vattu SET SOLUONGTON = SOLUONGTON + @soluong  WHERE MAVT = @valueVT", con, trans);
+                        updateVattu.Parameters.AddWithValue("@valueVT", cbbMaVT.Text.Trim());
+                        updateVattu.Parameters.AddWithValue("@soluong", textSL.Text.Trim());
+                        updateVattu.ExecuteNonQuery();
                         trans.Commit();
                         MessageBox.Show("Xoa thành công", "Thông báo", MessageBoxButtons.OK);
 
@@ -633,7 +629,7 @@ namespace QLVT
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Xoa that bai", "Thông báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Xoa that bai" + ex, "Thông báo", MessageBoxButtons.OK);
                     }
                     con.Close();
                 }
@@ -751,6 +747,11 @@ namespace QLVT
                 undoBtn.Enabled = false;
             }
             else { undoBtn.Enabled = true; }
+        }
+
+        private void textSL_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

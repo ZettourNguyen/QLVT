@@ -316,5 +316,10 @@ namespace QLVT
         {
 
         }
+
+        private void viewNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

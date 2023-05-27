@@ -32,7 +32,9 @@ namespace QLVT
 
         private void TAOTAIKHOAN_Click(object sender, EventArgs e)
         {
+            FormTaoTk form = new FormTaoTk();
 
+            form.Show();
         }
 
         private void THOAT_Click(object sender, EventArgs e)

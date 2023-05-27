@@ -36,3 +36,4 @@ C:\qlvt\QLVT\obj\Debug\QLVT.csproj.GenerateResource.cache
 C:\qlvt\QLVT\obj\Debug\QLVT.csproj.CoreCompileInputs.cache
 C:\qlvt\QLVT\obj\Debug\QLVT.exe
 C:\qlvt\QLVT\obj\Debug\QLVT.pdb
+C:\qlvt\QLVT\obj\Debug\QLVT.FormTaoTk.resources

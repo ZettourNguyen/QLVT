@@ -137,7 +137,7 @@ namespace QLVT
         public static Kho formKho;
         //
         public static donDatHang formDonDatHang;
-        
+
         public static PhieuNhap formPhieuNhap;
         
         public static PhieuXuat formPhieuXuat;

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.cbbMaVT = new System.Windows.Forms.ComboBox();
             this.cbbMaKho = new System.Windows.Forms.ComboBox();
@@ -90,7 +90,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(11, 122);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -104,7 +104,7 @@
             this.cbbMaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaVT.FormattingEnabled = true;
             this.cbbMaVT.Location = new System.Drawing.Point(94, 40);
-            this.cbbMaVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMaVT.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMaVT.Name = "cbbMaVT";
             this.cbbMaVT.Size = new System.Drawing.Size(130, 32);
             this.cbbMaVT.TabIndex = 20;
@@ -115,7 +115,7 @@
             this.cbbMaKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaKho.FormattingEnabled = true;
             this.cbbMaKho.Location = new System.Drawing.Point(94, 2);
-            this.cbbMaKho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMaKho.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMaKho.Name = "cbbMaKho";
             this.cbbMaKho.Size = new System.Drawing.Size(130, 32);
             this.cbbMaKho.TabIndex = 19;
@@ -148,13 +148,13 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel4.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.textSL, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.textDG, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(271, 124);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -191,21 +191,22 @@
             this.textSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSL.Enabled = false;
             this.textSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSL.Location = new System.Drawing.Point(120, 8);
+            this.textSL.Location = new System.Drawing.Point(130, 8);
             this.textSL.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textSL.Name = "textSL";
-            this.textSL.Size = new System.Drawing.Size(150, 26);
+            this.textSL.Size = new System.Drawing.Size(140, 26);
             this.textSL.TabIndex = 1;
+            this.textSL.TextChanged += new System.EventHandler(this.textSL_TextChanged);
             // 
             // textDG
             // 
             this.textDG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textDG.Enabled = false;
             this.textDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDG.Location = new System.Drawing.Point(120, 45);
+            this.textDG.Location = new System.Drawing.Point(130, 45);
             this.textDG.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textDG.Name = "textDG";
-            this.textDG.Size = new System.Drawing.Size(150, 26);
+            this.textDG.Size = new System.Drawing.Size(140, 26);
             this.textDG.TabIndex = 7;
             // 
             // CTPNview
@@ -216,13 +217,13 @@
             this.CTPNview.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CTPNview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CTPNview.Location = new System.Drawing.Point(2, 238);
-            this.CTPNview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CTPNview.Margin = new System.Windows.Forms.Padding(2);
             this.CTPNview.Name = "CTPNview";
             this.CTPNview.ReadOnly = true;
             this.CTPNview.RowHeadersWidth = 51;
             this.CTPNview.RowTemplate.Height = 24;
             this.CTPNview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CTPNview.Size = new System.Drawing.Size(1066, 139);
+            this.CTPNview.Size = new System.Drawing.Size(1030, 139);
             this.CTPNview.TabIndex = 45;
             this.CTPNview.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CTPNview_CellMouseClick);
             // 
@@ -232,8 +233,8 @@
             this.flowLayoutPanel1.Controls.Add(this.undoBtn);
             this.flowLayoutPanel1.Controls.Add(this.exitBtn);
             this.flowLayoutPanel1.Controls.Add(this.refreshBtn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1079, 238);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1043, 238);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 235);
             this.flowLayoutPanel1.TabIndex = 44;
@@ -242,7 +243,7 @@
             // 
             this.undoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.undoBtn.Location = new System.Drawing.Point(2, 2);
-            this.undoBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.undoBtn.Margin = new System.Windows.Forms.Padding(2);
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Size = new System.Drawing.Size(190, 33);
             this.undoBtn.TabIndex = 3;
@@ -254,7 +255,7 @@
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(2, 39);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(190, 33);
             this.exitBtn.TabIndex = 5;
@@ -266,7 +267,7 @@
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.Location = new System.Drawing.Point(2, 76);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(190, 33);
             this.refreshBtn.TabIndex = 4;
@@ -278,8 +279,8 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(1117, 538);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(1081, 538);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 20);
             this.textBox1.TabIndex = 43;
@@ -290,32 +291,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.viewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.viewNhanVien.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.viewNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.viewNhanVien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.viewNhanVien.DefaultCellStyle = dataGridViewCellStyle4;
             this.viewNhanVien.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.viewNhanVien.Location = new System.Drawing.Point(0, 17);
-            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.viewNhanVien.Name = "viewNhanVien";
             this.viewNhanVien.ReadOnly = true;
             this.viewNhanVien.RowHeadersWidth = 51;
             this.viewNhanVien.RowTemplate.Height = 24;
             this.viewNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.viewNhanVien.Size = new System.Drawing.Size(1272, 199);
+            this.viewNhanVien.Size = new System.Drawing.Size(1236, 199);
             this.viewNhanVien.TabIndex = 42;
             this.viewNhanVien.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.viewNhanVien_CellMouseClick_1);
             // 
@@ -326,7 +327,7 @@
             this.label1.Location = new System.Drawing.Point(4, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 24);
+            this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ma Nhan Vien:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -336,7 +337,7 @@
             this.panel3.Controls.Add(this.btnOK);
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Location = new System.Drawing.Point(308, 598);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 81);
             this.panel3.TabIndex = 48;
@@ -345,7 +346,7 @@
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOK.Location = new System.Drawing.Point(26, 12);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(82, 62);
             this.btnOK.TabIndex = 29;
@@ -358,7 +359,7 @@
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnHuy.Location = new System.Drawing.Point(130, 12);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(82, 62);
             this.btnHuy.TabIndex = 30;
@@ -376,7 +377,7 @@
             this.panel2.Controls.Add(this.btnGhiCTPN);
             this.panel2.Controls.Add(this.xoaBtn);
             this.panel2.Location = new System.Drawing.Point(578, 401);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 145);
             this.panel2.TabIndex = 47;
@@ -385,7 +386,7 @@
             // 
             this.btnAddCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAddCTPN.Location = new System.Drawing.Point(218, 10);
-            this.btnAddCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCTPN.Name = "btnAddCTPN";
             this.btnAddCTPN.Size = new System.Drawing.Size(226, 33);
             this.btnAddCTPN.TabIndex = 26;
@@ -397,7 +398,7 @@
             // 
             this.btnDelCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnDelCTPN.Location = new System.Drawing.Point(218, 48);
-            this.btnDelCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelCTPN.Name = "btnDelCTPN";
             this.btnDelCTPN.Size = new System.Drawing.Size(226, 33);
             this.btnDelCTPN.TabIndex = 27;
@@ -409,7 +410,7 @@
             // 
             this.ghiBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ghiBtn.Location = new System.Drawing.Point(1, 86);
-            this.ghiBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ghiBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ghiBtn.Name = "ghiBtn";
             this.ghiBtn.Size = new System.Drawing.Size(200, 33);
             this.ghiBtn.TabIndex = 2;
@@ -421,7 +422,7 @@
             // 
             this.themBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.themBtn.Location = new System.Drawing.Point(1, 10);
-            this.themBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.themBtn.Margin = new System.Windows.Forms.Padding(2);
             this.themBtn.Name = "themBtn";
             this.themBtn.Size = new System.Drawing.Size(200, 33);
             this.themBtn.TabIndex = 0;
@@ -433,7 +434,7 @@
             // 
             this.btnGhiCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnGhiCTPN.Location = new System.Drawing.Point(218, 87);
-            this.btnGhiCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGhiCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.btnGhiCTPN.Name = "btnGhiCTPN";
             this.btnGhiCTPN.Size = new System.Drawing.Size(226, 32);
             this.btnGhiCTPN.TabIndex = 28;
@@ -445,7 +446,7 @@
             // 
             this.xoaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xoaBtn.Location = new System.Drawing.Point(1, 48);
-            this.xoaBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.xoaBtn.Margin = new System.Windows.Forms.Padding(2);
             this.xoaBtn.Name = "xoaBtn";
             this.xoaBtn.Size = new System.Drawing.Size(200, 33);
             this.xoaBtn.TabIndex = 1;
@@ -457,13 +458,13 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel2.Controls.Add(this.textName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textMaNV, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(271, 20);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -477,10 +478,10 @@
             this.textName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textName.Enabled = false;
             this.textName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textName.Location = new System.Drawing.Point(120, 8);
+            this.textName.Location = new System.Drawing.Point(130, 8);
             this.textName.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(150, 26);
+            this.textName.Size = new System.Drawing.Size(140, 26);
             this.textName.TabIndex = 49;
             // 
             // label2
@@ -500,10 +501,10 @@
             this.textMaNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textMaNV.Enabled = false;
             this.textMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMaNV.Location = new System.Drawing.Point(120, 45);
+            this.textMaNV.Location = new System.Drawing.Point(130, 45);
             this.textMaNV.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textMaNV.Name = "textMaNV";
-            this.textMaNV.Size = new System.Drawing.Size(150, 26);
+            this.textMaNV.Size = new System.Drawing.Size(140, 26);
             this.textMaNV.TabIndex = 7;
             // 
             // panel1
@@ -513,7 +514,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Location = new System.Drawing.Point(8, 382);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 211);
             this.panel1.TabIndex = 46;
@@ -528,7 +529,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMaNV, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 20);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -543,7 +544,7 @@
             this.cbbMaPX.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaPX.FormattingEnabled = true;
             this.cbbMaPX.Location = new System.Drawing.Point(92, 2);
-            this.cbbMaPX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMaPX.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMaPX.Name = "cbbMaPX";
             this.cbbMaPX.Size = new System.Drawing.Size(130, 32);
             this.cbbMaPX.TabIndex = 42;
@@ -566,7 +567,7 @@
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker.Location = new System.Drawing.Point(92, 39);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(130, 26);
             this.dateTimePicker.TabIndex = 8;
@@ -595,9 +596,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PhieuXuat";
-            this.Size = new System.Drawing.Size(1272, 696);
+            this.Size = new System.Drawing.Size(1236, 696);
             this.Load += new System.EventHandler(this.PhieuXuat_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PhieuXuat_MouseClick);
             this.tableLayoutPanel3.ResumeLayout(false);

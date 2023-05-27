@@ -85,16 +85,17 @@
             this.panel3.Controls.Add(this.btnOK);
             this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Location = new System.Drawing.Point(308, 581);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 81);
             this.panel3.TabIndex = 41;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOK.Location = new System.Drawing.Point(26, 12);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(82, 62);
             this.btnOK.TabIndex = 29;
@@ -107,7 +108,7 @@
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnHuy.Location = new System.Drawing.Point(130, 12);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(82, 62);
             this.btnHuy.TabIndex = 30;
@@ -125,7 +126,7 @@
             this.panel2.Controls.Add(this.btnGhiCTPN);
             this.panel2.Controls.Add(this.xoaBtn);
             this.panel2.Location = new System.Drawing.Point(578, 384);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(456, 145);
             this.panel2.TabIndex = 40;
@@ -134,7 +135,7 @@
             // 
             this.btnAddCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAddCTPN.Location = new System.Drawing.Point(218, 10);
-            this.btnAddCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCTPN.Name = "btnAddCTPN";
             this.btnAddCTPN.Size = new System.Drawing.Size(226, 33);
             this.btnAddCTPN.TabIndex = 26;
@@ -146,7 +147,7 @@
             // 
             this.btnDelCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnDelCTPN.Location = new System.Drawing.Point(218, 48);
-            this.btnDelCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelCTPN.Name = "btnDelCTPN";
             this.btnDelCTPN.Size = new System.Drawing.Size(226, 33);
             this.btnDelCTPN.TabIndex = 27;
@@ -158,7 +159,7 @@
             // 
             this.ghiBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ghiBtn.Location = new System.Drawing.Point(1, 86);
-            this.ghiBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ghiBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ghiBtn.Name = "ghiBtn";
             this.ghiBtn.Size = new System.Drawing.Size(200, 33);
             this.ghiBtn.TabIndex = 2;
@@ -170,7 +171,7 @@
             // 
             this.themBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.themBtn.Location = new System.Drawing.Point(1, 10);
-            this.themBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.themBtn.Margin = new System.Windows.Forms.Padding(2);
             this.themBtn.Name = "themBtn";
             this.themBtn.Size = new System.Drawing.Size(200, 33);
             this.themBtn.TabIndex = 0;
@@ -182,7 +183,7 @@
             // 
             this.btnGhiCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnGhiCTPN.Location = new System.Drawing.Point(218, 87);
-            this.btnGhiCTPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGhiCTPN.Margin = new System.Windows.Forms.Padding(2);
             this.btnGhiCTPN.Name = "btnGhiCTPN";
             this.btnGhiCTPN.Size = new System.Drawing.Size(226, 32);
             this.btnGhiCTPN.TabIndex = 28;
@@ -194,7 +195,7 @@
             // 
             this.xoaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xoaBtn.Location = new System.Drawing.Point(1, 48);
-            this.xoaBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.xoaBtn.Margin = new System.Windows.Forms.Padding(2);
             this.xoaBtn.Name = "xoaBtn";
             this.xoaBtn.Size = new System.Drawing.Size(200, 33);
             this.xoaBtn.TabIndex = 1;
@@ -209,7 +210,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Location = new System.Drawing.Point(8, 365);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 211);
             this.panel1.TabIndex = 39;
@@ -224,7 +225,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMaNV, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 20);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -239,10 +240,11 @@
             this.cbbMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaPN.FormattingEnabled = true;
             this.cbbMaPN.Location = new System.Drawing.Point(92, 2);
-            this.cbbMaPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMaPN.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMaPN.Name = "cbbMaPN";
             this.cbbMaPN.Size = new System.Drawing.Size(130, 32);
             this.cbbMaPN.TabIndex = 42;
+            this.cbbMaPN.SelectedIndexChanged += new System.EventHandler(this.cbbMaPN_SelectedIndexChanged);
             // 
             // lbHo
             // 
@@ -262,7 +264,7 @@
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker.Location = new System.Drawing.Point(92, 39);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(130, 26);
             this.dateTimePicker.TabIndex = 8;
@@ -289,7 +291,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textMaNV, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(271, 20);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -303,7 +305,7 @@
             this.cbbMasoDDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMasoDDH.FormattingEnabled = true;
             this.cbbMasoDDH.Location = new System.Drawing.Point(118, 2);
-            this.cbbMasoDDH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMasoDDH.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMasoDDH.Name = "cbbMasoDDH";
             this.cbbMasoDDH.Size = new System.Drawing.Size(153, 32);
             this.cbbMasoDDH.TabIndex = 25;
@@ -354,7 +356,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(11, 122);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -369,10 +371,11 @@
             this.cbbMaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaVT.FormattingEnabled = true;
             this.cbbMaVT.Location = new System.Drawing.Point(94, 40);
-            this.cbbMaVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMaVT.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMaVT.Name = "cbbMaVT";
             this.cbbMaVT.Size = new System.Drawing.Size(130, 32);
             this.cbbMaVT.TabIndex = 20;
+            this.cbbMaVT.SelectedIndexChanged += new System.EventHandler(this.cbbMaVT_SelectedIndexChanged);
             // 
             // cbbMaKho
             // 
@@ -380,7 +383,7 @@
             this.cbbMaKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaKho.FormattingEnabled = true;
             this.cbbMaKho.Location = new System.Drawing.Point(94, 2);
-            this.cbbMaKho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbMaKho.Margin = new System.Windows.Forms.Padding(2);
             this.cbbMaKho.Name = "cbbMaKho";
             this.cbbMaKho.Size = new System.Drawing.Size(130, 32);
             this.cbbMaKho.TabIndex = 19;
@@ -419,7 +422,7 @@
             this.tableLayoutPanel4.Controls.Add(this.textSL, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.textDG, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(271, 124);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -481,7 +484,7 @@
             this.CTPNview.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CTPNview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CTPNview.Location = new System.Drawing.Point(2, 221);
-            this.CTPNview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CTPNview.Margin = new System.Windows.Forms.Padding(2);
             this.CTPNview.Name = "CTPNview";
             this.CTPNview.ReadOnly = true;
             this.CTPNview.RowHeadersWidth = 51;
@@ -498,7 +501,7 @@
             this.flowLayoutPanel1.Controls.Add(this.exitBtn);
             this.flowLayoutPanel1.Controls.Add(this.refreshBtn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(1079, 221);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(193, 235);
             this.flowLayoutPanel1.TabIndex = 37;
@@ -507,7 +510,7 @@
             // 
             this.undoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.undoBtn.Location = new System.Drawing.Point(2, 2);
-            this.undoBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.undoBtn.Margin = new System.Windows.Forms.Padding(2);
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Size = new System.Drawing.Size(190, 33);
             this.undoBtn.TabIndex = 3;
@@ -519,7 +522,7 @@
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(2, 39);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(190, 33);
             this.exitBtn.TabIndex = 5;
@@ -531,7 +534,7 @@
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.Location = new System.Drawing.Point(2, 76);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(190, 33);
             this.refreshBtn.TabIndex = 4;
@@ -544,7 +547,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(1117, 521);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(153, 20);
             this.textBox1.TabIndex = 36;
@@ -574,7 +577,7 @@
             this.viewNhanVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.viewNhanVien.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.viewNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.viewNhanVien.Name = "viewNhanVien";
             this.viewNhanVien.ReadOnly = true;
             this.viewNhanVien.RowHeadersWidth = 51;
@@ -596,7 +599,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.viewNhanVien);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PhieuNhap";
             this.Size = new System.Drawing.Size(1272, 696);
             this.Load += new System.EventHandler(this.PhieuNhap_Load);

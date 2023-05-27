@@ -90,7 +90,7 @@ namespace QLVT
         {
             // đặt sẵn mật khẩu để đỡ nhập lại nhiều lần
             txtTAIKHOAN.Text = "HT";// ho thai - chi nhanh 1
-            txtMATKHAU.Text = "123";
+            txtMATKHAU.Text = "12";
             if (KetNoiDatabaseGoc() == 0)
                 return;
             //Lấy 2 cái đầu tiên của danh sách
