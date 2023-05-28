@@ -14,7 +14,7 @@ namespace QLVT
     * xuyên suốt thì phải khai báo tại đây
     * 
     * Data Source=DELL: tên server gốc
-    * Initial Catalog=QLVT_DATHANG: tên cơ sở dữ liệu
+    * Initial Catalog=QLVT: tên cơ sở dữ liệu
     * Integrated Security=true: đăng nhập với chế độ Window Authentication
     * 
     * public static = biến toàn cục dự án
@@ -28,7 +28,7 @@ namespace QLVT
          **********************************************/
         public static SqlConnection conn = new SqlConnection();//conn
         public static String connstr = "";//connstr
-        public static String connstrPublisher = "Data Source=HUNGLE\\MAIN;Initial Catalog=QLVT;Integrated Security=true";
+        public static String connstrPublisher = "Data Source=LAPTOP-5KFMFC55;Initial Catalog=QLVT;Integrated Security=true";
         public static SqlDataReader myReader;//myReader
 
 
@@ -71,7 +71,7 @@ namespace QLVT
         public static String database = "QLVT";
 
         public static String remoteLogin = "HTKN";//remotelogin
-        public static String remotePassword = "123456";//remotepassword
+        public static String remotePassword = "123";//remotepassword
 
         public static String currentLogin = "";//mloginDN
         public static String currentPassword = "";//passwordDN
@@ -239,7 +239,18 @@ namespace QLVT
 
             }
         }
-        
+        public static string maCnToString()
+        {
+            if (serverName.Equals("LAPTOP-5KFMFC55\\SERVER1"))
+            {
+                return "CN1";
+            }
+            else
+            {
+                return "CN2";
+            }
+
+        }
 
 
         /// <summary>

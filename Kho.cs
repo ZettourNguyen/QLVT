@@ -33,18 +33,7 @@ namespace QLVT
         {
             InitializeComponent();
         }
-        public static string maCnToString()
-        {
-            if (Program.serverName.Contains("CN1"))
-            {
-                return "CN1";
-            }
-            else
-            {
-                return "CN2";
-            }
-            
-        }
+        
         private void Kho_Load(object sender, EventArgs e)
         {
             con = new SqlConnection(connectionString);
@@ -65,7 +54,7 @@ namespace QLVT
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            textMaCN.Text = maCnToString();
+            textMaCN.Text = Program.maCnToString();
             textMaCN.Enabled = false;
         }
 

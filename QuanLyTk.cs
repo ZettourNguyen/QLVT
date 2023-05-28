@@ -32,9 +32,15 @@ namespace QLVT
 
         private void TAOTAIKHOAN_Click(object sender, EventArgs e)
         {
-            FormTaoTk form = new FormTaoTk();
-
-            form.Show();
+            if(Program.userName.Equals(""))
+            {
+                MessageBox.Show("Ban phai dang nhap de tao tai khoan","Thong bao",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormTaoTk form = new FormTaoTk();
+                form.Show();
+            }
         }
 
         private void THOAT_Click(object sender, EventArgs e)

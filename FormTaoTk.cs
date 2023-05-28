@@ -69,8 +69,6 @@ namespace QLVT
         {
             con = new SqlConnection(connectionString);
             DataTable dt = new DataTable();
-
-
             try
             {
                 con.Open();
