@@ -58,7 +58,7 @@
             this.TAOTAIKHOAN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.TAOTAIKHOAN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.TAOTAIKHOAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TAOTAIKHOAN.Location = new System.Drawing.Point(248, 0);
+            this.TAOTAIKHOAN.Location = new System.Drawing.Point(239, 0);
             this.TAOTAIKHOAN.Margin = new System.Windows.Forms.Padding(0);
             this.TAOTAIKHOAN.Name = "TAOTAIKHOAN";
             this.TAOTAIKHOAN.Size = new System.Drawing.Size(220, 82);
@@ -75,7 +75,7 @@
             this.THOAT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.THOAT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.THOAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.THOAT.Location = new System.Drawing.Point(503, 0);
+            this.THOAT.Location = new System.Drawing.Point(485, 0);
             this.THOAT.Margin = new System.Windows.Forms.Padding(0);
             this.THOAT.Name = "THOAT";
             this.THOAT.Size = new System.Drawing.Size(220, 82);
@@ -89,9 +89,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.DANGNHAP);
             this.Controls.Add(this.THOAT);
             this.Controls.Add(this.TAOTAIKHOAN);
-            this.Controls.Add(this.DANGNHAP);
             this.Name = "QuanLyTk";
             this.Size = new System.Drawing.Size(1236, 714);
             this.Load += new System.EventHandler(this.QuanLyTk_Load);
@@ -102,7 +102,7 @@
         #endregion
 
         private System.Windows.Forms.Button DANGNHAP;
-        private System.Windows.Forms.Button TAOTAIKHOAN;
         private System.Windows.Forms.Button THOAT;
+        private System.Windows.Forms.Button TAOTAIKHOAN;
     }
 }

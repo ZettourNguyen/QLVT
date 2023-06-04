@@ -60,10 +60,10 @@
             this.pnHETHONG.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnHETHONG.Controls.Add(this.controlPn);
             this.pnHETHONG.Controls.Add(this.pnControl);
-            this.pnHETHONG.Location = new System.Drawing.Point(-2, 38);
-            this.pnHETHONG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnHETHONG.Location = new System.Drawing.Point(-3, 47);
+            this.pnHETHONG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnHETHONG.Name = "pnHETHONG";
-            this.pnHETHONG.Size = new System.Drawing.Size(1026, 463);
+            this.pnHETHONG.Size = new System.Drawing.Size(1368, 570);
             this.pnHETHONG.TabIndex = 0;
             this.pnHETHONG.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -72,10 +72,10 @@
             this.controlPn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlPn.Location = new System.Drawing.Point(2, 67);
-            this.controlPn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.controlPn.Location = new System.Drawing.Point(3, 82);
+            this.controlPn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.controlPn.Name = "controlPn";
-            this.controlPn.Size = new System.Drawing.Size(1022, 391);
+            this.controlPn.Size = new System.Drawing.Size(1363, 481);
             this.controlPn.TabIndex = 2;
             // 
             // pnControl
@@ -89,10 +89,10 @@
             this.pnControl.Controls.Add(this.btnDDH);
             this.pnControl.Controls.Add(this.btnNhap);
             this.pnControl.Controls.Add(this.btnXuat);
-            this.pnControl.Location = new System.Drawing.Point(2, 2);
-            this.pnControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnControl.Location = new System.Drawing.Point(3, 2);
+            this.pnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnControl.Name = "pnControl";
-            this.pnControl.Size = new System.Drawing.Size(1022, 63);
+            this.pnControl.Size = new System.Drawing.Size(1363, 78);
             this.pnControl.TabIndex = 1;
             // 
             // btnNhanVien
@@ -106,7 +106,7 @@
             this.btnNhanVien.Location = new System.Drawing.Point(0, 0);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(0);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(132, 62);
+            this.btnNhanVien.Size = new System.Drawing.Size(176, 76);
             this.btnNhanVien.TabIndex = 0;
             this.btnNhanVien.Text = "Nhan Vien";
             this.btnNhanVien.UseVisualStyleBackColor = false;
@@ -120,10 +120,10 @@
             this.bntVatTu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.bntVatTu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.bntVatTu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntVatTu.Location = new System.Drawing.Point(132, 0);
+            this.bntVatTu.Location = new System.Drawing.Point(176, 0);
             this.bntVatTu.Margin = new System.Windows.Forms.Padding(0);
             this.bntVatTu.Name = "bntVatTu";
-            this.bntVatTu.Size = new System.Drawing.Size(132, 62);
+            this.bntVatTu.Size = new System.Drawing.Size(176, 76);
             this.bntVatTu.TabIndex = 1;
             this.bntVatTu.Text = "Vat Tu";
             this.bntVatTu.UseVisualStyleBackColor = false;
@@ -137,10 +137,10 @@
             this.btnKho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnKho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKho.Location = new System.Drawing.Point(264, 0);
+            this.btnKho.Location = new System.Drawing.Point(352, 0);
             this.btnKho.Margin = new System.Windows.Forms.Padding(0);
             this.btnKho.Name = "btnKho";
-            this.btnKho.Size = new System.Drawing.Size(132, 62);
+            this.btnKho.Size = new System.Drawing.Size(176, 76);
             this.btnKho.TabIndex = 2;
             this.btnKho.Text = "Kho";
             this.btnKho.UseVisualStyleBackColor = false;
@@ -154,10 +154,10 @@
             this.btnDDH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnDDH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnDDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDDH.Location = new System.Drawing.Point(396, 0);
+            this.btnDDH.Location = new System.Drawing.Point(528, 0);
             this.btnDDH.Margin = new System.Windows.Forms.Padding(0);
             this.btnDDH.Name = "btnDDH";
-            this.btnDDH.Size = new System.Drawing.Size(132, 62);
+            this.btnDDH.Size = new System.Drawing.Size(176, 76);
             this.btnDDH.TabIndex = 3;
             this.btnDDH.Text = "DDH";
             this.btnDDH.UseVisualStyleBackColor = false;
@@ -171,10 +171,10 @@
             this.btnNhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhap.Location = new System.Drawing.Point(528, 0);
+            this.btnNhap.Location = new System.Drawing.Point(704, 0);
             this.btnNhap.Margin = new System.Windows.Forms.Padding(0);
             this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(132, 62);
+            this.btnNhap.Size = new System.Drawing.Size(176, 76);
             this.btnNhap.TabIndex = 4;
             this.btnNhap.Text = "PhieuNhap";
             this.btnNhap.UseVisualStyleBackColor = false;
@@ -188,10 +188,10 @@
             this.btnXuat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuat.Location = new System.Drawing.Point(660, 0);
+            this.btnXuat.Location = new System.Drawing.Point(880, 0);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(0);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(132, 62);
+            this.btnXuat.Size = new System.Drawing.Size(176, 76);
             this.btnXuat.TabIndex = 5;
             this.btnXuat.Text = "phieuXuat";
             this.btnXuat.UseVisualStyleBackColor = false;
@@ -201,10 +201,9 @@
             // 
             this.MANHANVIEN.AutoSize = true;
             this.MANHANVIEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MANHANVIEN.Location = new System.Drawing.Point(16, 3);
-            this.MANHANVIEN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MANHANVIEN.Location = new System.Drawing.Point(21, 4);
             this.MANHANVIEN.Name = "MANHANVIEN";
-            this.MANHANVIEN.Size = new System.Drawing.Size(116, 20);
+            this.MANHANVIEN.Size = new System.Drawing.Size(151, 25);
             this.MANHANVIEN.TabIndex = 0;
             this.MANHANVIEN.Text = "MANHANVIEN:";
             // 
@@ -212,10 +211,9 @@
             // 
             this.HOTEN.AutoSize = true;
             this.HOTEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.HOTEN.Location = new System.Drawing.Point(298, 6);
-            this.HOTEN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.HOTEN.Location = new System.Drawing.Point(397, 7);
             this.HOTEN.Name = "HOTEN";
-            this.HOTEN.Size = new System.Drawing.Size(64, 20);
+            this.HOTEN.Size = new System.Drawing.Size(82, 25);
             this.HOTEN.TabIndex = 1;
             this.HOTEN.Text = "HOTEN";
             // 
@@ -223,12 +221,12 @@
             // 
             this.NHOM.AutoSize = true;
             this.NHOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.NHOM.Location = new System.Drawing.Point(559, 6);
-            this.NHOM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NHOM.Location = new System.Drawing.Point(745, 7);
             this.NHOM.Name = "NHOM";
-            this.NHOM.Size = new System.Drawing.Size(57, 20);
+            this.NHOM.Size = new System.Drawing.Size(73, 25);
             this.NHOM.TabIndex = 2;
             this.NHOM.Text = "NHOM";
+            this.NHOM.TextChanged += new System.EventHandler(this.NHOM_TextChanged);
             // 
             // panel2
             // 
@@ -238,10 +236,10 @@
             this.panel2.Controls.Add(this.NHOM);
             this.panel2.Controls.Add(this.HOTEN);
             this.panel2.Controls.Add(this.MANHANVIEN);
-            this.panel2.Location = new System.Drawing.Point(0, 500);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 615);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1022, 29);
+            this.panel2.Size = new System.Drawing.Size(1363, 36);
             this.panel2.TabIndex = 0;
             // 
             // hethong
@@ -255,7 +253,7 @@
             this.hethong.Location = new System.Drawing.Point(0, 0);
             this.hethong.Margin = new System.Windows.Forms.Padding(0);
             this.hethong.Name = "hethong";
-            this.hethong.Size = new System.Drawing.Size(110, 37);
+            this.hethong.Size = new System.Drawing.Size(147, 46);
             this.hethong.TabIndex = 6;
             this.hethong.Text = "hethong";
             this.hethong.UseVisualStyleBackColor = false;
@@ -267,10 +265,11 @@
             this.flowLayoutPanel2.Controls.Add(this.btnQuanLy);
             this.flowLayoutPanel2.Controls.Add(this.btnBaoCao);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, -2);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1022, 40);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1097, 49);
             this.flowLayoutPanel2.TabIndex = 0;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // btnQuanLy
             // 
@@ -281,10 +280,10 @@
             this.btnQuanLy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnQuanLy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLy.Location = new System.Drawing.Point(110, 0);
+            this.btnQuanLy.Location = new System.Drawing.Point(147, 0);
             this.btnQuanLy.Margin = new System.Windows.Forms.Padding(0);
             this.btnQuanLy.Name = "btnQuanLy";
-            this.btnQuanLy.Size = new System.Drawing.Size(110, 37);
+            this.btnQuanLy.Size = new System.Drawing.Size(147, 46);
             this.btnQuanLy.TabIndex = 7;
             this.btnQuanLy.Text = "Quan Ly";
             this.btnQuanLy.UseVisualStyleBackColor = false;
@@ -299,24 +298,24 @@
             this.btnBaoCao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCao.Location = new System.Drawing.Point(220, 0);
+            this.btnBaoCao.Location = new System.Drawing.Point(294, 0);
             this.btnBaoCao.Margin = new System.Windows.Forms.Padding(0);
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(110, 37);
+            this.btnBaoCao.Size = new System.Drawing.Size(147, 46);
             this.btnBaoCao.TabIndex = 8;
             this.btnBaoCao.Text = "BaoCao";
             this.btnBaoCao.UseVisualStyleBackColor = false;
             // 
             // FormChinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1021, 531);
+            this.ClientSize = new System.Drawing.Size(1361, 654);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.pnHETHONG);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormChinh";
             this.Text = "Trang Chu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

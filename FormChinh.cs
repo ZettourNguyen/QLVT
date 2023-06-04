@@ -121,6 +121,17 @@ namespace QLVT
             form.Dock = DockStyle.Fill;
             pnHETHONG.Controls.Clear();
             pnHETHONG.Controls.Add(form);
+
+            
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void NHOM_TextChanged(object sender, EventArgs e)
+        {
             
         }
     }

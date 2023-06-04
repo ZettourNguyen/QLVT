@@ -141,7 +141,9 @@ namespace QLVT
         public static PhieuNhap formPhieuNhap;
         
         public static PhieuXuat formPhieuXuat;
-        
+        public static QuanLyTk formQuanLy;
+
+
         /*****************************************************
          * mở kết nối tới server 
          * @return trả về 1 nếu thành công
