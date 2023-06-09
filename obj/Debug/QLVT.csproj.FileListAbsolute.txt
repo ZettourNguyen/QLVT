@@ -108,6 +108,6 @@ D:\csdlpt\QLVT\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.xml
 D:\csdlpt\QLVT\bin\Debug\DevExpress.XtraPivotGrid.v22.2.xml
 D:\csdlpt\QLVT\bin\Debug\DevExpress.XtraDiagram.v22.2.xml
 D:\csdlpt\QLVT\bin\Debug\DevExpress.Diagram.v22.2.Core.xml
-D:\csdlpt\QLVT\obj\Debug\QLVT.FormReport.XtraRp_PhieuNvNhapTrongNamTheoLoai.resources
 D:\csdlpt\QLVT\obj\Debug\QLVT.exe.licenses
 D:\csdlpt\QLVT\obj\Debug\QLVT.csproj.CopyComplete
+D:\csdlpt\QLVT\obj\Debug\QLVT.FormReport.XtraReport3.resources
