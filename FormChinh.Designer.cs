@@ -92,7 +92,7 @@
             this.pnControl.Location = new System.Drawing.Point(3, 2);
             this.pnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnControl.Name = "pnControl";
-            this.pnControl.Size = new System.Drawing.Size(1363, 78);
+            this.pnControl.Size = new System.Drawing.Size(1324, 78);
             this.pnControl.TabIndex = 1;
             // 
             // btnNhanVien
@@ -303,8 +303,9 @@
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(147, 46);
             this.btnBaoCao.TabIndex = 8;
-            this.btnBaoCao.Text = "BaoCao";
+            this.btnBaoCao.Text = "Bao bieu";
             this.btnBaoCao.UseVisualStyleBackColor = false;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // FormChinh
             // 

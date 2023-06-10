@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLVT.pnXprt;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -121,8 +122,6 @@ namespace QLVT
             form.Dock = DockStyle.Fill;
             pnHETHONG.Controls.Clear();
             pnHETHONG.Controls.Add(form);
-
-            
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -133,6 +132,14 @@ namespace QLVT
         private void NHOM_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            PnXprtSelection PnXprt = new PnXprtSelection();
+            pnHETHONG.Controls.Clear();
+            PnXprt.Dock = DockStyle.Fill;
+            pnHETHONG.Controls.Add(PnXprt);
         }
     }
 }
