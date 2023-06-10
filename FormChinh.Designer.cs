@@ -308,8 +308,9 @@
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(110, 37);
             this.btnBaoCao.TabIndex = 8;
-            this.btnBaoCao.Text = "BaoCao";
+            this.btnBaoCao.Text = "Bao bieu";
             this.btnBaoCao.UseVisualStyleBackColor = false;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // cmbCHINHANH
             // 

@@ -3,6 +3,9 @@ using System.Data;
 using System.Windows.Forms;
 using System;
 using System.Text.RegularExpressions;
+using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Replication;
 
 namespace QLVT
 {
@@ -199,6 +202,7 @@ namespace QLVT
                 MessageBox.Show(ex.Message);
                 return null;
             }
+            
         }
 
 
@@ -256,11 +260,13 @@ namespace QLVT
 
         }
 
+        
 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
+
+/// <summary>
+/// The main entry point for the application.
+/// </summary>
+[STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

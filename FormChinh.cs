@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLVT.pnXprt;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -199,6 +200,12 @@ namespace QLVT
             Program.loginPassword = Program.remotePassword;
 
             Program.KetNoi();
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            PnXprtSelection PnXprt = new PnXprtSelection();
+            pnHETHONG.Controls.Clear();
+            PnXprt.Dock = DockStyle.Fill;
+            pnHETHONG.Controls.Add(PnXprt);
         }
     }
 }
