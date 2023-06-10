@@ -42,7 +42,10 @@ namespace QLVT
             viewNhanVien.Rows.Clear();
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
-
+            if (Program.role == "CONGTY")
+            {
+                controlPanel.Hide();
+            }
             try
             {
                 con.Open();
@@ -101,11 +104,13 @@ namespace QLVT
                 textMaKho.Text = valueMaKho.Trim();
                 textTenKho.Text = valueTenKho.Trim();
                 textDiaChi.Text = valueDiaChi.Trim();
-                textMaCN.Text = valueMaCN.Trim();
+                _ = valueMaCN.Trim() != "" ? textMaCN.Text = valueMaCN.Trim() : textMaCN.Text = Program.chinhanhduocchon.Trim();
 
                 undoUpdateQuery = "update kho set [TENkho] = '" + textTenKho.Text + "' , [diachi] = '"
                     + textDiaChi.Text + "' , [macn] = '" + textMaCN.Text + "' where [makho] = '" + textMaKho.Text.Trim() + "' ;";
-                textBox1.Text = undoUpdateQuery;
+            } else
+            {
+                textMaCN.Text = Program.chinhanhduocchon.Trim();
             }
         }
 
@@ -127,7 +132,7 @@ namespace QLVT
                     cmd.Parameters.AddWithValue("@value0", textMaKho.Text.Trim());
                     cmd.Parameters.AddWithValue("@value1", textTenKho.Text.Trim());
                     cmd.Parameters.AddWithValue("@value2", textDiaChi.Text.Trim());
-                    cmd.Parameters.AddWithValue("@value3", textMaCN.Text.Trim());
+                    cmd.Parameters.AddWithValue("@value3", Program.chinhanhduocchon.Trim());
                     cmd.ExecuteNonQuery();
                     transaction.Commit();
                     MessageBox.Show("them thanh cong");
@@ -170,7 +175,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }
@@ -231,18 +235,12 @@ namespace QLVT
                     transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
         }
 
         private void textMaCN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textMaKho_TextChanged(object sender, EventArgs e)
         {
 
         }

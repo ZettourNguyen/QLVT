@@ -50,7 +50,7 @@
             this.textTen = new System.Windows.Forms.TextBox();
             this.lbLuong = new System.Windows.Forms.Label();
             this.textLuong = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.controlPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.themBtn = new System.Windows.Forms.Button();
             this.xoaBtn = new System.Windows.Forms.Button();
             this.ghiBtn = new System.Windows.Forms.Button();
@@ -58,11 +58,10 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.viewNhanVien)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.controlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // viewNhanVien
@@ -327,20 +326,20 @@
             this.textLuong.Size = new System.Drawing.Size(196, 26);
             this.textLuong.TabIndex = 18;
             // 
-            // flowLayoutPanel1
+            // controlPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.themBtn);
-            this.flowLayoutPanel1.Controls.Add(this.xoaBtn);
-            this.flowLayoutPanel1.Controls.Add(this.ghiBtn);
-            this.flowLayoutPanel1.Controls.Add(this.undoBtn);
-            this.flowLayoutPanel1.Controls.Add(this.refreshBtn);
-            this.flowLayoutPanel1.Controls.Add(this.exitBtn);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(468, 249);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(323, 246);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.controlPanel.Controls.Add(this.themBtn);
+            this.controlPanel.Controls.Add(this.xoaBtn);
+            this.controlPanel.Controls.Add(this.ghiBtn);
+            this.controlPanel.Controls.Add(this.undoBtn);
+            this.controlPanel.Controls.Add(this.refreshBtn);
+            this.controlPanel.Controls.Add(this.exitBtn);
+            this.controlPanel.Controls.Add(this.button7);
+            this.controlPanel.Location = new System.Drawing.Point(468, 249);
+            this.controlPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.controlPanel.Name = "controlPanel";
+            this.controlPanel.Size = new System.Drawing.Size(323, 246);
+            this.controlPanel.TabIndex = 4;
             // 
             // themBtn
             // 
@@ -425,15 +424,6 @@
             this.button7.Text = "Trans";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(38, 570);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(750, 20);
-            this.textBox1.TabIndex = 5;
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -446,8 +436,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.viewNhanVien);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -457,9 +446,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.viewNhanVien)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.controlPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -483,7 +471,7 @@
         private System.Windows.Forms.TextBox textCN;
         private System.Windows.Forms.Label lbLuong;
         private System.Windows.Forms.TextBox textLuong;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel controlPanel;
         private System.Windows.Forms.Button themBtn;
         private System.Windows.Forms.Button xoaBtn;
         private System.Windows.Forms.Button ghiBtn;
@@ -491,7 +479,6 @@
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
     }

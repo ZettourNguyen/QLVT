@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textDVT = new System.Windows.Forms.TextBox();
             this.textSLT = new System.Windows.Forms.TextBox();
@@ -47,26 +46,17 @@
             this.ghiBtn = new System.Windows.Forms.Button();
             this.xoaBtn = new System.Windows.Forms.Button();
             this.themBtn = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.editPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewNhanVien)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.editPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(61, 706);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(999, 22);
-            this.textBox1.TabIndex = 9;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel1.Controls.Add(this.textDVT, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textSLT, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbSLT, 0, 2);
@@ -75,19 +65,19 @@
             this.tableLayoutPanel1.Controls.Add(this.lbDVT, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lbMaVT, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textMaVT, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(51, 305);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 248);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 389);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(308, 316);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // textDVT
@@ -95,10 +85,10 @@
             this.textDVT.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textDVT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textDVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDVT.Location = new System.Drawing.Point(165, 143);
-            this.textDVT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.textDVT.Location = new System.Drawing.Point(124, 115);
+            this.textDVT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textDVT.Name = "textDVT";
-            this.textDVT.Size = new System.Drawing.Size(239, 30);
+            this.textDVT.Size = new System.Drawing.Size(180, 26);
             this.textDVT.TabIndex = 14;
             // 
             // textSLT
@@ -106,20 +96,20 @@
             this.textSLT.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textSLT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSLT.Location = new System.Drawing.Point(165, 99);
-            this.textSLT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.textSLT.Location = new System.Drawing.Point(124, 79);
+            this.textSLT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textSLT.Name = "textSLT";
-            this.textSLT.Size = new System.Drawing.Size(239, 30);
+            this.textSLT.Size = new System.Drawing.Size(180, 26);
             this.textSLT.TabIndex = 13;
             // 
             // lbSLT
             // 
             this.lbSLT.AutoSize = true;
             this.lbSLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSLT.Location = new System.Drawing.Point(5, 99);
-            this.lbSLT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbSLT.Location = new System.Drawing.Point(4, 79);
+            this.lbSLT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.lbSLT.Name = "lbSLT";
-            this.lbSLT.Size = new System.Drawing.Size(128, 25);
+            this.lbSLT.Size = new System.Drawing.Size(103, 20);
             this.lbSLT.TabIndex = 11;
             this.lbSLT.Text = "So luong ton:";
             this.lbSLT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -129,20 +119,20 @@
             this.textTenVT.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textTenVT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textTenVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTenVT.Location = new System.Drawing.Point(165, 55);
-            this.textTenVT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.textTenVT.Location = new System.Drawing.Point(124, 43);
+            this.textTenVT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textTenVT.Name = "textTenVT";
-            this.textTenVT.Size = new System.Drawing.Size(239, 30);
+            this.textTenVT.Size = new System.Drawing.Size(180, 26);
             this.textTenVT.TabIndex = 8;
             // 
             // lbTenVT
             // 
             this.lbTenVT.AutoSize = true;
             this.lbTenVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenVT.Location = new System.Drawing.Point(5, 55);
-            this.lbTenVT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbTenVT.Location = new System.Drawing.Point(4, 43);
+            this.lbTenVT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.lbTenVT.Name = "lbTenVT";
-            this.lbTenVT.Size = new System.Drawing.Size(105, 25);
+            this.lbTenVT.Size = new System.Drawing.Size(83, 20);
             this.lbTenVT.TabIndex = 6;
             this.lbTenVT.Text = "Ten vat tu:";
             this.lbTenVT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -151,10 +141,10 @@
             // 
             this.lbDVT.AutoSize = true;
             this.lbDVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDVT.Location = new System.Drawing.Point(5, 143);
-            this.lbDVT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbDVT.Location = new System.Drawing.Point(4, 115);
+            this.lbDVT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.lbDVT.Name = "lbDVT";
-            this.lbDVT.Size = new System.Drawing.Size(109, 25);
+            this.lbDVT.Size = new System.Drawing.Size(87, 20);
             this.lbDVT.TabIndex = 6;
             this.lbDVT.Text = "Don vi tinh:";
             this.lbDVT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -163,10 +153,10 @@
             // 
             this.lbMaVT.AutoSize = true;
             this.lbMaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaVT.Location = new System.Drawing.Point(5, 10);
-            this.lbMaVT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbMaVT.Location = new System.Drawing.Point(4, 8);
+            this.lbMaVT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.lbMaVT.Name = "lbMaVT";
-            this.lbMaVT.Size = new System.Drawing.Size(78, 25);
+            this.lbMaVT.Size = new System.Drawing.Size(59, 20);
             this.lbMaVT.TabIndex = 0;
             this.lbMaVT.Text = "Ma VT:";
             this.lbMaVT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -175,10 +165,10 @@
             // 
             this.textMaVT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textMaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMaVT.Location = new System.Drawing.Point(165, 10);
-            this.textMaVT.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.textMaVT.Location = new System.Drawing.Point(124, 8);
+            this.textMaVT.Margin = new System.Windows.Forms.Padding(4, 8, 4, 4);
             this.textMaVT.Name = "textMaVT";
-            this.textMaVT.Size = new System.Drawing.Size(239, 30);
+            this.textMaVT.Size = new System.Drawing.Size(180, 26);
             this.textMaVT.TabIndex = 1;
             // 
             // viewNhanVien
@@ -205,14 +195,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.viewNhanVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.viewNhanVien.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.viewNhanVien.Location = new System.Drawing.Point(3, 0);
-            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewNhanVien.Location = new System.Drawing.Point(2, 0);
+            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.viewNhanVien.Name = "viewNhanVien";
             this.viewNhanVien.ReadOnly = true;
             this.viewNhanVien.RowHeadersWidth = 51;
             this.viewNhanVien.RowTemplate.Height = 24;
             this.viewNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.viewNhanVien.Size = new System.Drawing.Size(1231, 292);
+            this.viewNhanVien.Size = new System.Drawing.Size(923, 237);
             this.viewNhanVien.TabIndex = 6;
             this.viewNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewNhanVien_CellContentClick);
             this.viewNhanVien.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.viewNhanVien_CellMouseClick);
@@ -220,10 +210,10 @@
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(289, 100);
-            this.exitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.exitBtn.Location = new System.Drawing.Point(216, 82);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(137, 94);
+            this.exitBtn.Size = new System.Drawing.Size(103, 76);
             this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -232,10 +222,10 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(146, 100);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refreshBtn.Location = new System.Drawing.Point(109, 82);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(2);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Size = new System.Drawing.Size(137, 94);
+            this.refreshBtn.Size = new System.Drawing.Size(103, 76);
             this.refreshBtn.TabIndex = 4;
             this.refreshBtn.Text = "Refresh";
             this.refreshBtn.UseVisualStyleBackColor = true;
@@ -244,10 +234,10 @@
             // undoBtn
             // 
             this.undoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.undoBtn.Location = new System.Drawing.Point(3, 100);
-            this.undoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.undoBtn.Location = new System.Drawing.Point(2, 82);
+            this.undoBtn.Margin = new System.Windows.Forms.Padding(2);
             this.undoBtn.Name = "undoBtn";
-            this.undoBtn.Size = new System.Drawing.Size(137, 94);
+            this.undoBtn.Size = new System.Drawing.Size(103, 76);
             this.undoBtn.TabIndex = 3;
             this.undoBtn.Text = "Undo";
             this.undoBtn.UseVisualStyleBackColor = true;
@@ -256,10 +246,10 @@
             // ghiBtn
             // 
             this.ghiBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ghiBtn.Location = new System.Drawing.Point(289, 2);
-            this.ghiBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ghiBtn.Location = new System.Drawing.Point(216, 2);
+            this.ghiBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ghiBtn.Name = "ghiBtn";
-            this.ghiBtn.Size = new System.Drawing.Size(137, 94);
+            this.ghiBtn.Size = new System.Drawing.Size(103, 76);
             this.ghiBtn.TabIndex = 2;
             this.ghiBtn.Text = "Ghi";
             this.ghiBtn.UseVisualStyleBackColor = true;
@@ -268,10 +258,10 @@
             // xoaBtn
             // 
             this.xoaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xoaBtn.Location = new System.Drawing.Point(146, 2);
-            this.xoaBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xoaBtn.Location = new System.Drawing.Point(109, 2);
+            this.xoaBtn.Margin = new System.Windows.Forms.Padding(2);
             this.xoaBtn.Name = "xoaBtn";
-            this.xoaBtn.Size = new System.Drawing.Size(137, 94);
+            this.xoaBtn.Size = new System.Drawing.Size(103, 76);
             this.xoaBtn.TabIndex = 1;
             this.xoaBtn.Text = "Xoa";
             this.xoaBtn.UseVisualStyleBackColor = true;
@@ -280,54 +270,50 @@
             // themBtn
             // 
             this.themBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.themBtn.Location = new System.Drawing.Point(3, 2);
-            this.themBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.themBtn.Location = new System.Drawing.Point(2, 2);
+            this.themBtn.Margin = new System.Windows.Forms.Padding(2);
             this.themBtn.Name = "themBtn";
-            this.themBtn.Size = new System.Drawing.Size(137, 94);
+            this.themBtn.Size = new System.Drawing.Size(103, 76);
             this.themBtn.TabIndex = 0;
             this.themBtn.Text = "Them";
             this.themBtn.UseVisualStyleBackColor = true;
             this.themBtn.Click += new System.EventHandler(this.themBtn_Click);
             // 
-            // flowLayoutPanel1
+            // editPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.themBtn);
-            this.flowLayoutPanel1.Controls.Add(this.xoaBtn);
-            this.flowLayoutPanel1.Controls.Add(this.ghiBtn);
-            this.flowLayoutPanel1.Controls.Add(this.undoBtn);
-            this.flowLayoutPanel1.Controls.Add(this.refreshBtn);
-            this.flowLayoutPanel1.Controls.Add(this.exitBtn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(624, 306);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(431, 303);
-            this.flowLayoutPanel1.TabIndex = 8;
+            this.editPanel.Controls.Add(this.themBtn);
+            this.editPanel.Controls.Add(this.xoaBtn);
+            this.editPanel.Controls.Add(this.ghiBtn);
+            this.editPanel.Controls.Add(this.undoBtn);
+            this.editPanel.Controls.Add(this.refreshBtn);
+            this.editPanel.Controls.Add(this.exitBtn);
+            this.editPanel.Location = new System.Drawing.Point(468, 249);
+            this.editPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.editPanel.Name = "editPanel";
+            this.editPanel.Size = new System.Drawing.Size(323, 246);
+            this.editPanel.TabIndex = 8;
             // 
             // VatTu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.editPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.viewNhanVien);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VatTu";
-            this.Size = new System.Drawing.Size(1237, 736);
+            this.Size = new System.Drawing.Size(928, 598);
             this.Load += new System.EventHandler(this.VatTu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewNhanVien)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.editPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textDVT;
         private System.Windows.Forms.TextBox textSLT;
@@ -344,6 +330,6 @@
         private System.Windows.Forms.Button ghiBtn;
         private System.Windows.Forms.Button xoaBtn;
         private System.Windows.Forms.Button themBtn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel editPanel;
     }
 }

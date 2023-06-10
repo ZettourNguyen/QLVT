@@ -51,6 +51,11 @@ namespace QLVT
             viewNhanVien.Rows.Clear();
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
+            if (Program.role == "CONGTY")
+            {
+                controlPanel2.Hide();
+                controlPanel3.Hide();
+            }
             try
             {
                 con.Open();
@@ -182,7 +187,6 @@ namespace QLVT
                       "[DONGIA] = " + textDG.Text + " " +
                       "WHERE [MASODDH] = '" + cbbMasoDDH.Text + "' " +
                       "AND [MAVT] = '" ;
-                        textBox1.Text = undoUpdateQueryCTDDH;
                     }
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -230,7 +234,6 @@ namespace QLVT
                       "[DONGIA] = " + textDG.Text + " " +
                       "WHERE [MASODDH] = '" + cbbMasoDDH.Text + "' " +
                       "AND [MAVT] = '" ;
-                textBox1.Text = undoUpdateQueryCTDDH;
                 oldMAVT = valueMaVT;
             }
             if (Program.userName != textMaNV.Text)
@@ -336,7 +339,6 @@ namespace QLVT
                     transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
@@ -392,7 +394,6 @@ namespace QLVT
                     "VALUES ('" + cbbMasoDDH.Text + "', '" + cbbMaVT.Text + "', " + textSL.Text + ", '" + textDG.Text + "')";
 
                     undoList.Push(cauTruyVanHoanTac);
-                    textBox1.Text = cauTruyVanHoanTac;
                 }
                 catch (Exception ex)
                 {
@@ -613,7 +614,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("them that bai", ex.Message);
-                textBox1.Text = ex.Message;
             }
             con.Close();
 
@@ -646,7 +646,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }
@@ -691,14 +690,12 @@ namespace QLVT
                 
                 cauTruyVanHoanTac = "" + "DELETE CTDDH " + "WHERE [MASODDH] = '" + cbbMasoDDH.Text.Trim() + "' AND MAVT = '" +cbbMaVT.Text.Trim() + "';";
                 undoList.Push(cauTruyVanHoanTac);
-                textBox1.Text = cauTruyVanHoanTac;
 
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
                 MessageBox.Show("them that bai", ex.Message);
-                textBox1.Text = ex.Message;
             }
             con.Close();
         }
@@ -730,7 +727,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }

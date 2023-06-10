@@ -38,6 +38,11 @@ namespace QLVT
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
 
+            if(Program.role == "CONGTY")
+            {
+                editPanel.Hide();
+            }
+
             try
             {
                 con.Open();
@@ -90,7 +95,6 @@ namespace QLVT
                 {
                     transaction.Rollback();
                     MessageBox.Show(ex.ToString(), "Thêm vật tư thất bại!");
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
                 undoBtn.Enabled = true;
@@ -115,7 +119,6 @@ namespace QLVT
 
                 undoUpdateQuery = "update vattu set [TENVT] = '" + textTenVT.Text + "' , [SOLUONGTON] = '"
                     + textSLT.Text + "' , [DVT] = '" + textSLT.Text + "' where [mavt] = '" + textMaVT.Text + "' ;";
-                textBox1.Text += undoUpdateQuery;
             }
         }
 
@@ -145,7 +148,6 @@ namespace QLVT
                     transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
@@ -176,7 +178,6 @@ namespace QLVT
                 catch (Exception ex)
                 {
                     MessageBox.Show("Xoa that bai", "Thông báo", MessageBoxButtons.OK);
-                    textBox1.Text = ex.Message;
                 }
                 con.Close();
             }
@@ -208,7 +209,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,50 @@ namespace QLVT
 {
     public partial class FormChinh : Form
     {
+        private SqlConnection connPublisher = new SqlConnection();
 
         public FormChinh()
         {
             InitializeComponent();
         }
+        private void layDanhSachPhanManh(String cmd)
+        {
+            if (connPublisher.State == ConnectionState.Closed)
+            {
+                connPublisher.Open();
+            }
+            DataTable dt = new DataTable();
+            // adapter dùng để đưa dữ liệu từ view sang database
+            SqlDataAdapter da = new SqlDataAdapter(cmd, connPublisher);
+            // dùng adapter thì mới đổ vào data table được
+            da.Fill(dt);
 
+
+            connPublisher.Close();
+            Program.bindingSource.DataSource = dt;
+
+
+            cmbCHINHANH.DataSource = Program.bindingSource;
+            cmbCHINHANH.DisplayMember = "TENCN";
+            cmbCHINHANH.ValueMember = "TENSERVER";
+        }
+        private int KetNoiDatabaseGoc()
+        {
+            if (connPublisher != null && connPublisher.State == ConnectionState.Open)
+                connPublisher.Close();
+            try
+            {
+                connPublisher.ConnectionString = Program.connstrPublisher;
+                connPublisher.Open();
+                return 1;
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                return 0;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             QuanLyTk form = new QuanLyTk();
@@ -91,6 +130,23 @@ namespace QLVT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Program.role != "CONGTY")
+            {
+                cmbCHINHANH.Hide();
+            }
+            else
+            {
+                try
+                {
+                    if (KetNoiDatabaseGoc() == 0)
+                        return;
+                    layDanhSachPhanManh("SELECT TOP 2 * FROM sp_GetSubscriptions");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
             pnHETHONG.Controls.Clear();
             NhanVien form = new NhanVien();
             form.Dock = DockStyle.Fill;
@@ -123,6 +179,7 @@ namespace QLVT
             pnHETHONG.Controls.Add(form);
 
             
+
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -133,6 +190,15 @@ namespace QLVT
         private void NHOM_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void cmbCHINHANH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.serverName = cmbCHINHANH.SelectedValue.ToString();
+            Program.loginName = Program.remoteLogin;
+            Program.loginPassword = Program.remotePassword;
+
+            Program.KetNoi();
         }
     }
 }

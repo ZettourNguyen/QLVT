@@ -86,7 +86,17 @@ namespace QLVT
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            
+            if (Program.role == "CONGTY")
+            {
+                targetRole = "CONGTY";
+                role1Btn.Hide();
+                roleBtn2.Hide();
+            } else
+            {
+                roleBtn3.Hide();
+            }
+
+
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
@@ -127,6 +137,12 @@ namespace QLVT
         private void exitbtn_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+
+        private void roleBtn3_CheckedChanged_1(object sender, EventArgs e)
+        {
+            targetRole = "CONGTY";
         }
     }
 }
