@@ -20,7 +20,8 @@ namespace QLVT
     {
         Stack undoList = new Stack();
         string undoUpdateQuery;
-        string patternCMND = @"^(?!0)\d{9}(\d{3})?$";
+        string patternCMND = @"^(?!0)\d{10,}$";
+
         string connectionString = @"Data Source="+ Program.serverName + ";Initial Catalog=QLVT;Persist Security Info=True;User ID="+Program.loginName + ";Password="+ Program.loginPassword;
         SqlConnection con;
         SqlCommand cmd;
@@ -45,7 +46,7 @@ namespace QLVT
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT [MANV],[HO],[TEN],[SOCMND],[DIACHI],[NGAYSINH],[LUONG],[MACN],[trangthaixoa] FROM [NhanVien] ", con);
+                cmd = new SqlCommand("SELECT [MANV],[HO],[TEN],[SOCMND],[DIACHI],[NGAYSINH],[LUONG],[MACN] FROM [NhanVien] ", con);
                 adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
                 viewNhanVien.DataSource = dt;

@@ -271,3 +271,5 @@ D:\csdlpt\QLVT\obj\Debug\QLVT.FormReport.Xrpt_DanhSachVatTuCongTy.resources
 D:\csdlpt\QLVT\obj\Debug\QLVT.pnXprt.PnXprtSelection.resources
 D:\csdlpt\QLVT\obj\Debug\QLVT.pnXprt.PnDanhSachVatTu.resources
 D:\csdlpt\QLVT\obj\Debug\QLVT.pnXprt.PnDanhSachNhanVien.resources
+D:\csdlpt\QLVT\obj\Debug\QLVT.pnXprt.PnDanhSachDDHnullPN.resources
+D:\csdlpt\QLVT\obj\Debug\QLVT.pnXprt.Xprt_DanhSachDDHnullPN.resources

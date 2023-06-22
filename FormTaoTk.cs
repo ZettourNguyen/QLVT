@@ -101,11 +101,15 @@ namespace QLVT
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            if (textPass.Text.Trim() == texRePass.Text.Trim())
+            if (targetRole == "CONGTY")
             {
-                con.Open();
+                String connstrHTKN = "Data Source=" + Program.serverName + ";Initial Catalog=" +
+                       Program.database + ";User ID=" +
+                       Program.remoteLogin + ";password=" + Program.remotePassword;
+                con = new SqlConnection(connstrHTKN);
                 try
                 {
+                    con.Open();
                     SqlCommand cmdTaoTk = new SqlCommand("TaoTaiKhoan", con);
                     cmdTaoTk.CommandType = CommandType.StoredProcedure;
                     cmdTaoTk.Parameters.AddWithValue("@LGNAME", usTextBox.Text.Trim());
@@ -115,18 +119,46 @@ namespace QLVT
                     cmdTaoTk.ExecuteNonQuery();
 
                     MessageBox.Show("Tạo tài khoản thành công!", "Thông báo");
-
-
+                    con.Close();
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Thông báo!");
                 }
-                con.Close();
-            } else
-            {
-                MessageBox.Show("Xác nhận mật khẩu không đúng", "Thông báo!");
+                
             }
+            else
+            {
+                if (textPass.Text.Trim() == texRePass.Text.Trim())
+                {
+                    con.Open();
+                    try
+                    {
+                        SqlCommand cmdTaoTk = new SqlCommand("TaoTaiKhoan", con);
+                        cmdTaoTk.CommandType = CommandType.StoredProcedure;
+                        cmdTaoTk.Parameters.AddWithValue("@LGNAME", usTextBox.Text.Trim());
+                        cmdTaoTk.Parameters.AddWithValue("@PASS", textPass.Text.Trim());
+                        cmdTaoTk.Parameters.AddWithValue("@USERNAME", targetMaNV);
+                        cmdTaoTk.Parameters.AddWithValue("@ROLE", targetRole);
+                        cmdTaoTk.ExecuteNonQuery();
+
+                        MessageBox.Show("Tạo tài khoản thành công!", "Thông báo");
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Thông báo!");
+                    }
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Xác nhận mật khẩu không đúng", "Thông báo!");
+                }
+            }
+            
         }
 
         private void roleBtn2_CheckedChanged(object sender, EventArgs e)

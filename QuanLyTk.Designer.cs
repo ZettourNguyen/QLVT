@@ -46,7 +46,7 @@
             this.DANGNHAP.Name = "DANGNHAP";
             this.DANGNHAP.Size = new System.Drawing.Size(220, 82);
             this.DANGNHAP.TabIndex = 7;
-            this.DANGNHAP.Text = "DangNhap";
+            this.DANGNHAP.Text = "Đăng Nhập";
             this.DANGNHAP.UseVisualStyleBackColor = false;
             this.DANGNHAP.Click += new System.EventHandler(this.DANGNHAP_Click);
             // 
@@ -63,7 +63,7 @@
             this.TAOTAIKHOAN.Name = "TAOTAIKHOAN";
             this.TAOTAIKHOAN.Size = new System.Drawing.Size(220, 82);
             this.TAOTAIKHOAN.TabIndex = 8;
-            this.TAOTAIKHOAN.Text = "TAOTAIKHOAN";
+            this.TAOTAIKHOAN.Text = "Tạo tài khoản";
             this.TAOTAIKHOAN.UseVisualStyleBackColor = false;
             this.TAOTAIKHOAN.Click += new System.EventHandler(this.TAOTAIKHOAN_Click);
             // 
@@ -80,7 +80,7 @@
             this.THOAT.Name = "THOAT";
             this.THOAT.Size = new System.Drawing.Size(220, 82);
             this.THOAT.TabIndex = 9;
-            this.THOAT.Text = "THOAT";
+            this.THOAT.Text = "Thoát";
             this.THOAT.UseVisualStyleBackColor = false;
             this.THOAT.Click += new System.EventHandler(this.THOAT_Click);
             // 

@@ -407,6 +407,12 @@
     <Compile Include="FormChinh.Designer.cs">
       <DependentUpon>FormChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="pnXprt\PnDanhSachDDHnullPN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pnXprt\PnDanhSachDDHnullPN.Designer.cs">
+      <DependentUpon>PnDanhSachDDHnullPN.cs</DependentUpon>
+    </Compile>
     <Compile Include="pnXprt\PnDanhSachNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,6 +430,12 @@
     </Compile>
     <Compile Include="pnXprt\PnXprtSelection.Designer.cs">
       <DependentUpon>PnXprtSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport\Xprt_DanhSachDDHnullPN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormReport\Xprt_DanhSachDDHnullPN.Designer.cs">
+      <DependentUpon>Xprt_DanhSachDDHnullPN.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -472,6 +484,9 @@
     <EmbeddedResource Include="FormChinh.resx">
       <DependentUpon>FormChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pnXprt\PnDanhSachDDHnullPN.resx">
+      <DependentUpon>PnDanhSachDDHnullPN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pnXprt\PnDanhSachNhanVien.resx">
       <DependentUpon>PnDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +495,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pnXprt\PnXprtSelection.resx">
       <DependentUpon>PnXprtSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport\Xprt_DanhSachDDHnullPN.resx">
+      <DependentUpon>Xprt_DanhSachDDHnullPN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

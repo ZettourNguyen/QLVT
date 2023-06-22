@@ -46,5 +46,13 @@ namespace QLVT.pnXprt
         {
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PnDanhSachDDHnullPN pn = new PnDanhSachDDHnullPN();
+            pn.Dock = DockStyle.Fill;
+            pnXprtInput.Controls.Clear();
+            pnXprtInput.Controls.Add(pn);
+        }
     }
 }

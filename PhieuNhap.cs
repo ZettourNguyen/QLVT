@@ -469,13 +469,13 @@ namespace QLVT
                 cmd.Parameters.AddWithValue("@VALUEMAKHO", cbbMaKho.Text.Trim());
                 cmd.ExecuteNonQuery(); 
                 // THEM VAO CTDDH
-                string queryCTDDH = "INSERT INTO CTPN ([mapn],[MAVT],[SOLUONG],[DONGIA]) VALUES (@valuemapn, @valueMAVT, @valueSL, @valueDG)";
-                SqlCommand cmdCTDDH = new SqlCommand(queryCTDDH, con, transaction);
-                cmdCTDDH.Parameters.AddWithValue("@valuemapn", cbbMaPN.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueMAVT", cbbMaVT.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueSL", textSL.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueDG", textDG.Text.Trim());
-                cmdCTDDH.ExecuteNonQuery();
+                //string queryCTDDH = "INSERT INTO CTPN ([mapn],[MAVT],[SOLUONG],[DONGIA]) VALUES (@valuemapn, @valueMAVT, @valueSL, @valueDG)";
+                //SqlCommand cmdCTDDH = new SqlCommand(queryCTDDH, con, transaction);
+                //cmdCTDDH.Parameters.AddWithValue("@valuemapn", cbbMaPN.Text.Trim());
+                //cmdCTDDH.Parameters.AddWithValue("@valueMAVT", cbbMaVT.Text.Trim());
+                //cmdCTDDH.Parameters.AddWithValue("@valueSL", textSL.Text.Trim());
+                //cmdCTDDH.Parameters.AddWithValue("@valueDG", textDG.Text.Trim());
+                //cmdCTDDH.ExecuteNonQuery();
 
                 transaction.Commit();
                 MessageBox.Show("them thanh cong");

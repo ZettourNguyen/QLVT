@@ -479,7 +479,7 @@ namespace QLVT
                 if (result != null)
                 {
                     int soluong = Convert.ToInt32(result);
-                    if(soluong > int.Parse(textSL.Text.Trim())) {
+                    if(soluong + int.Parse(textSL.Text.Trim()) > int.Parse(textSL.Text.Trim())) {
                         string query = "UPDATE CTPX SET [SOLUONG] = @value1, [DONGIA] = @value2, [MAVT] = @value3  WHERE [MAPX] = @value0 and [MAVT] = @value01;";
                         SqlCommand cmd = new SqlCommand(query, con, transaction);
                         cmd.Parameters.AddWithValue("@value1", textSL.Text.Trim());

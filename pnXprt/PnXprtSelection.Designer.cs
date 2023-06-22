@@ -30,7 +30,6 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnXprtInput = new DevExpress.XtraEditors.PanelControl();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl1.Controls.Add(this.button4);
-            this.panelControl1.Controls.Add(this.button3);
             this.panelControl1.Controls.Add(this.button2);
             this.panelControl1.Controls.Add(this.pnXprtInput);
             this.panelControl1.Controls.Add(this.button1);
@@ -57,22 +55,13 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button4.Location = new System.Drawing.Point(5, 214);
+            this.button4.Location = new System.Drawing.Point(3, 136);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(386, 72);
             this.button4.TabIndex = 4;
             this.button4.Text = "Danh sách các đơn đặt hàng chưa có phiếu nhập";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.button3.Location = new System.Drawing.Point(5, 136);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(386, 72);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Bảng kê chi tiết số lượng – trị giá hàng nhập/xuất";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -127,7 +116,6 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private DevExpress.XtraEditors.PanelControl pnXprtInput;
         private System.Windows.Forms.Button button4;

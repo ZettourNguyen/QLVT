@@ -83,7 +83,7 @@ namespace QLVT
         {
             // đặt sẵn mật khẩu để đỡ nhập lại nhiều lần
             txtTAIKHOAN.Text = "HT";// ho thai - chi nhanh 1
-            txtMATKHAU.Text = "12";
+            txtMATKHAU.Text = "123";
             if (KetNoiDatabaseGoc() == 0)
                 return;
             //Lấy 2 cái đầu tiên của danh sách
@@ -154,7 +154,8 @@ namespace QLVT
             this.Visible = false;
             Program.formChinh.enableButtons(1);
 
-            
+
+
 
         }
 
@@ -175,7 +176,7 @@ namespace QLVT
             {
                 Program.serverName = cmbCHINHANH.SelectedValue.ToString();
 
-                if (cmbCHINHANH.SelectedValue.ToString().Contains("CN1"))
+                if (cmbCHINHANH.SelectedValue.ToString().Contains("SERVER1"))
                 {
                     Program.chinhanhduocchon = "CN1";
                 } else

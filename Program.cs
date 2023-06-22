@@ -31,7 +31,7 @@ namespace QLVT
          **********************************************/
         public static SqlConnection conn = new SqlConnection();//conn
         public static String connstr = "";//connstr
-        public static String connstrPublisher = "Data Source=HUNGLE\\MAIN;;Initial Catalog=QLVT;Integrated Security=true";
+        public static String connstrPublisher = "Data Source=LAPTOP-5KFMFC55;;Initial Catalog=QLVT;Integrated Security=true";
         public static SqlDataReader myReader;//myReader
 
 
@@ -74,7 +74,7 @@ namespace QLVT
         public static String database = "QLVT";
 
         public static String remoteLogin = "HTKN";//remotelogin
-        public static String remotePassword = "123456";//remotepassword
+        public static String remotePassword = "123";//remotepassword
 
         public static String currentLogin = "";//mloginDN
         public static String currentPassword = "";//passwordDN
@@ -177,6 +177,8 @@ namespace QLVT
             }
         }
 
+        
+
 
         /**********************************************
          *  ExecSqlDataReader thực hiện câu lệnh mà dữ liệu trả về chỉ dùng
@@ -189,10 +191,11 @@ namespace QLVT
             SqlDataReader myreader;
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
             sqlcmd.CommandType = CommandType.Text;
-            if (Program.conn.State == ConnectionState.Closed)
-                Program.conn.Open();
+            
             try
             {
+                if (Program.conn.State == ConnectionState.Closed)
+                    Program.conn.Open();
                 myreader = sqlcmd.ExecuteReader(); return myreader;
 
             }

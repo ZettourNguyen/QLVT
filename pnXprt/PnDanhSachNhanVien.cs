@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.XtraReports.UI;
 using QLVT.FormReport;
+using System.IO;
 
 namespace QLVT.pnXprt
 {
@@ -103,7 +104,34 @@ namespace QLVT.pnXprt
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Xrpt_DanhSachNhanVien report = new Xrpt_DanhSachNhanVien();
+            try
+            {
+                if (File.Exists(@"D:\ReportDanhSachNhanVien.pdf"))
+                {
+                    DialogResult dr = MessageBox.Show("File ReportDanhSachNhanVien.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                        "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.Yes)
+                    {
+                        report.ExportToPdf(@"D:\ReportDanhSachNhanVien.pdf");
+                        MessageBox.Show("File ReportDanhSachNhanVien.pdf đã được ghi thành công tại ổ D",
+                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
+                }
+                else
+                {
+                    report.ExportToPdf(@"D:\ReportDanhSachNhanVien.pdf");
+                    MessageBox.Show("File ReportDanhSachNhanVien.pdf đã được ghi thành công tại ổ D",
+                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("Vui lòng đóng file ReportDanhSachNhanVien.pdf",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void btnPreView_Click(object sender, EventArgs e)
@@ -112,6 +140,11 @@ namespace QLVT.pnXprt
             inNV.lblTitle.Text = "DANH SÁCH NHÂN VIÊN "+cbbCN.Text.ToUpper();
             ReportPrintTool print = new ReportPrintTool(inNV);
             print.ShowPreviewDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
         ////
 
