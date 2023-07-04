@@ -51,13 +51,7 @@ namespace QLVT
          * Nếu không trả về "null"
          ******************************************************************/
 
-        private Form CheckExists(Type ftype)
-        {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
-        }
+        
 
 
         /******************************************************************
@@ -82,7 +76,6 @@ namespace QLVT
                 return 0;
             }
         }
-
 
 
 
@@ -120,8 +113,9 @@ namespace QLVT
             /* Step 2*/
             Program.loginName = txtTAIKHOAN.Text.Trim();
             Program.loginPassword = txtMATKHAU.Text.Trim();
+
             if (Program.KetNoi() == 0)
-                return;
+
             /* Step 3*/
             Program.brand = cmbCHINHANH.SelectedIndex;
             Program.currentLogin = Program.loginName;
@@ -129,7 +123,7 @@ namespace QLVT
 
 
             /* Step 4*/
-            String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";// exec sp_DangNhap 'TP'
+            String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";// exec sp_DangNhap 'ht'
             Program.myReader = Program.ExecSqlDataReader(statement);
             if (Program.myReader == null)
                 return;
@@ -159,6 +153,10 @@ namespace QLVT
             /* Step 6*/
             this.Visible = false;
             Program.formChinh.enableButtons(1);
+
+
+
+
         }
 
         private void btnTHOAT_Click(object sender, EventArgs e)
@@ -177,12 +175,26 @@ namespace QLVT
             try
             {
                 Program.serverName = cmbCHINHANH.SelectedValue.ToString();
+
+                if (cmbCHINHANH.SelectedValue.ToString().Contains("SERVER1"))
+                {
+                    Program.chinhanhduocchon = "CN1";
+                } else
+                {
+                    Program.chinhanhduocchon = "CN2";
+                }
+
                 //Console.WriteLine(cmbCHINHANH.SelectedValue.ToString());
             }
             catch (Exception)
             {
 
             }
+        }
+
+        private void FormDangNhap_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }

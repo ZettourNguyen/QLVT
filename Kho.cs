@@ -33,7 +33,7 @@ namespace QLVT
         {
             InitializeComponent();
         }
-
+        
         private void Kho_Load(object sender, EventArgs e)
         {
             con = new SqlConnection(connectionString);
@@ -42,7 +42,10 @@ namespace QLVT
             viewNhanVien.Rows.Clear();
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
-
+            if (Program.role == "CONGTY")
+            {
+                controlPanel.Hide();
+            }
             try
             {
                 con.Open();
@@ -54,6 +57,8 @@ namespace QLVT
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
+            textMaCN.Text = Program.maCnToString();
+            textMaCN.Enabled = false;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -99,42 +104,51 @@ namespace QLVT
                 textMaKho.Text = valueMaKho.Trim();
                 textTenKho.Text = valueTenKho.Trim();
                 textDiaChi.Text = valueDiaChi.Trim();
-                textMaCN.Text = valueMaCN.Trim();
+                _ = valueMaCN.Trim() != "" ? textMaCN.Text = valueMaCN.Trim() : textMaCN.Text = Program.chinhanhduocchon.Trim();
 
                 undoUpdateQuery = "update kho set [TENkho] = '" + textTenKho.Text + "' , [diachi] = '"
                     + textDiaChi.Text + "' , [macn] = '" + textMaCN.Text + "' where [makho] = '" + textMaKho.Text.Trim() + "' ;";
-                textBox1.Text = undoUpdateQuery;
+            } else
+            {
+                textMaCN.Text = Program.chinhanhduocchon.Trim();
             }
         }
 
         private void themBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlTransaction transaction = con.BeginTransaction();
-
-            try
+            if(textMaKho.Text == "" || textTenKho.Text == "" || textDiaChi.Text == "")
             {
-                string query = "INSERT INTO Kho ([MAKHO],[TENKHO],[DIACHI],[MACN]) VALUES (@value0, @value1, @value2, @value3)";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
-                cmd.Parameters.AddWithValue("@value0", textMaKho.Text.Trim());
-                cmd.Parameters.AddWithValue("@value1", textTenKho.Text.Trim());
-                cmd.Parameters.AddWithValue("@value2", textDiaChi.Text.Trim());
-                cmd.Parameters.AddWithValue("@value3", textMaCN.Text.Trim());
-                cmd.ExecuteNonQuery();
-                transaction.Commit();
-                MessageBox.Show("them thanh cong");
-
-                //undo query
-                String cauTruyVanHoanTac = "";
-                cauTruyVanHoanTac = "" + "DELETE DBO.Kho " + "WHERE makho = '" + textMaKho.Text.Trim() + "'";
-                undoList.Push(cauTruyVanHoanTac);
+                MessageBox.Show("Hãy điền đầy đủ thông tin!", "Thêm thất bại");
             }
-            catch (Exception ex)
+            else
             {
-                transaction.Rollback();
-                MessageBox.Show("them that bai", ex.Message);
+                con.Open();
+                SqlTransaction transaction = con.BeginTransaction();
+
+                try
+                {
+                    string query = "INSERT INTO Kho ([MAKHO],[TENKHO],[DIACHI],[MACN]) VALUES (@value0, @value1, @value2, @value3)";
+                    SqlCommand cmd = new SqlCommand(query, con, transaction);
+                    cmd.Parameters.AddWithValue("@value0", textMaKho.Text.Trim());
+                    cmd.Parameters.AddWithValue("@value1", textTenKho.Text.Trim());
+                    cmd.Parameters.AddWithValue("@value2", textDiaChi.Text.Trim());
+                    cmd.Parameters.AddWithValue("@value3", Program.chinhanhduocchon.Trim());
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                    MessageBox.Show("them thanh cong");
+
+                    //undo query
+                    String cauTruyVanHoanTac = "";
+                    cauTruyVanHoanTac = "" + "DELETE DBO.Kho " + "WHERE makho = '" + textMaKho.Text.Trim() + "'";
+                    undoList.Push(cauTruyVanHoanTac);
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show(ex.Message, "Thêm thất bại");
+                }
+                con.Close();
             }
-            con.Close();
         }
 
         private void ghiBtn_Click(object sender, EventArgs e)
@@ -161,7 +175,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }
@@ -222,10 +235,14 @@ namespace QLVT
                     transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
+        }
+
+        private void textMaCN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,10 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.controlPanel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.controlPanel2 = new System.Windows.Forms.Panel();
             this.btnAddCTPN = new System.Windows.Forms.Button();
             this.btnDelCTPN = new System.Windows.Forms.Button();
             this.ghiBtn = new System.Windows.Forms.Button();
@@ -62,37 +62,39 @@
             this.textSL = new System.Windows.Forms.TextBox();
             this.textDG = new System.Windows.Forms.TextBox();
             this.CTPNview = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.controlPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.undoBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.viewNhanVien = new System.Windows.Forms.DataGridView();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.controlPanel1.SuspendLayout();
+            this.controlPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CTPNview)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.controlPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
+            // controlPanel1
             // 
-            this.panel3.Controls.Add(this.btnOK);
-            this.panel3.Controls.Add(this.btnHuy);
-            this.panel3.Location = new System.Drawing.Point(411, 715);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 100);
-            this.panel3.TabIndex = 41;
+            this.controlPanel1.Controls.Add(this.btnOK);
+            this.controlPanel1.Controls.Add(this.btnHuy);
+            this.controlPanel1.Location = new System.Drawing.Point(411, 715);
+            this.controlPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.controlPanel1.Name = "controlPanel1";
+            this.controlPanel1.Size = new System.Drawing.Size(321, 100);
+            this.controlPanel1.TabIndex = 41;
+            this.controlPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOK.Location = new System.Drawing.Point(35, 15);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(109, 76);
             this.btnOK.TabIndex = 29;
@@ -104,36 +106,39 @@
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnHuy.Location = new System.Drawing.Point(174, 15);
+            this.btnHuy.Location = new System.Drawing.Point(173, 15);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(109, 76);
             this.btnHuy.TabIndex = 30;
-            this.btnHuy.Text = "HUY";
+            this.btnHuy.Text = "HỦY";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Visible = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // panel2
+            // controlPanel2
             // 
-            this.panel2.Controls.Add(this.btnAddCTPN);
-            this.panel2.Controls.Add(this.btnDelCTPN);
-            this.panel2.Controls.Add(this.ghiBtn);
-            this.panel2.Controls.Add(this.themBtn);
-            this.panel2.Controls.Add(this.btnGhiCTPN);
-            this.panel2.Controls.Add(this.xoaBtn);
-            this.panel2.Location = new System.Drawing.Point(771, 473);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 178);
-            this.panel2.TabIndex = 40;
+            this.controlPanel2.Controls.Add(this.btnAddCTPN);
+            this.controlPanel2.Controls.Add(this.btnDelCTPN);
+            this.controlPanel2.Controls.Add(this.ghiBtn);
+            this.controlPanel2.Controls.Add(this.themBtn);
+            this.controlPanel2.Controls.Add(this.btnGhiCTPN);
+            this.controlPanel2.Controls.Add(this.xoaBtn);
+            this.controlPanel2.Location = new System.Drawing.Point(771, 473);
+            this.controlPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.controlPanel2.Name = "controlPanel2";
+            this.controlPanel2.Size = new System.Drawing.Size(608, 178);
+            this.controlPanel2.TabIndex = 40;
             // 
             // btnAddCTPN
             // 
             this.btnAddCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAddCTPN.Location = new System.Drawing.Point(291, 12);
+            this.btnAddCTPN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddCTPN.Name = "btnAddCTPN";
             this.btnAddCTPN.Size = new System.Drawing.Size(301, 41);
             this.btnAddCTPN.TabIndex = 26;
-            this.btnAddCTPN.Text = "Them CTPN";
+            this.btnAddCTPN.Text = "Thêm CTPN";
             this.btnAddCTPN.UseVisualStyleBackColor = true;
             this.btnAddCTPN.Click += new System.EventHandler(this.btnAddCTPN_Click);
             // 
@@ -141,10 +146,11 @@
             // 
             this.btnDelCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnDelCTPN.Location = new System.Drawing.Point(291, 59);
+            this.btnDelCTPN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelCTPN.Name = "btnDelCTPN";
             this.btnDelCTPN.Size = new System.Drawing.Size(301, 41);
             this.btnDelCTPN.TabIndex = 27;
-            this.btnDelCTPN.Text = "Xoa CTPN";
+            this.btnDelCTPN.Text = "Xóa CTPN";
             this.btnDelCTPN.UseVisualStyleBackColor = true;
             this.btnDelCTPN.Click += new System.EventHandler(this.btnDelCTPN_Click);
             // 
@@ -152,10 +158,11 @@
             // 
             this.ghiBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ghiBtn.Location = new System.Drawing.Point(1, 106);
+            this.ghiBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ghiBtn.Name = "ghiBtn";
-            this.ghiBtn.Size = new System.Drawing.Size(266, 41);
+            this.ghiBtn.Size = new System.Drawing.Size(267, 41);
             this.ghiBtn.TabIndex = 2;
-            this.ghiBtn.Text = "Sua Phieu Nhap";
+            this.ghiBtn.Text = "Sửa phiếu nhập:";
             this.ghiBtn.UseVisualStyleBackColor = true;
             this.ghiBtn.Click += new System.EventHandler(this.ghiBtn_Click);
             // 
@@ -163,10 +170,11 @@
             // 
             this.themBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.themBtn.Location = new System.Drawing.Point(1, 12);
+            this.themBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.themBtn.Name = "themBtn";
-            this.themBtn.Size = new System.Drawing.Size(266, 41);
+            this.themBtn.Size = new System.Drawing.Size(267, 41);
             this.themBtn.TabIndex = 0;
-            this.themBtn.Text = "Tao Phieu Nhap";
+            this.themBtn.Text = "Tạo phiếu nhập:";
             this.themBtn.UseVisualStyleBackColor = true;
             this.themBtn.Click += new System.EventHandler(this.themBtn_Click);
             // 
@@ -174,10 +182,11 @@
             // 
             this.btnGhiCTPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnGhiCTPN.Location = new System.Drawing.Point(291, 107);
+            this.btnGhiCTPN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGhiCTPN.Name = "btnGhiCTPN";
-            this.btnGhiCTPN.Size = new System.Drawing.Size(301, 40);
+            this.btnGhiCTPN.Size = new System.Drawing.Size(301, 39);
             this.btnGhiCTPN.TabIndex = 28;
-            this.btnGhiCTPN.Text = "Sua CTPN";
+            this.btnGhiCTPN.Text = "Sửa CTPN";
             this.btnGhiCTPN.UseVisualStyleBackColor = true;
             this.btnGhiCTPN.Click += new System.EventHandler(this.btnGhiCTPN_Click);
             // 
@@ -185,10 +194,11 @@
             // 
             this.xoaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xoaBtn.Location = new System.Drawing.Point(1, 59);
+            this.xoaBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xoaBtn.Name = "xoaBtn";
-            this.xoaBtn.Size = new System.Drawing.Size(266, 41);
+            this.xoaBtn.Size = new System.Drawing.Size(267, 41);
             this.xoaBtn.TabIndex = 1;
-            this.xoaBtn.Text = "Xoa Phieu Nhap";
+            this.xoaBtn.Text = "Xóa phiếu nhập:";
             this.xoaBtn.UseVisualStyleBackColor = true;
             this.xoaBtn.Click += new System.EventHandler(this.xoaBtn_Click);
             // 
@@ -198,9 +208,10 @@
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Controls.Add(this.tableLayoutPanel4);
-            this.panel1.Location = new System.Drawing.Point(10, 449);
+            this.panel1.Location = new System.Drawing.Point(11, 449);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(734, 260);
+            this.panel1.Size = new System.Drawing.Size(733, 260);
             this.panel1.TabIndex = 39;
             // 
             // tableLayoutPanel1
@@ -212,7 +223,8 @@
             this.tableLayoutPanel1.Controls.Add(this.lbHo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMaNV, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 25);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -226,10 +238,12 @@
             this.cbbMaPN.Enabled = false;
             this.cbbMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaPN.FormattingEnabled = true;
-            this.cbbMaPN.Location = new System.Drawing.Point(123, 3);
+            this.cbbMaPN.Location = new System.Drawing.Point(123, 2);
+            this.cbbMaPN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbMaPN.Name = "cbbMaPN";
-            this.cbbMaPN.Size = new System.Drawing.Size(173, 37);
+            this.cbbMaPN.Size = new System.Drawing.Size(172, 37);
             this.cbbMaPN.TabIndex = 42;
+            this.cbbMaPN.SelectedIndexChanged += new System.EventHandler(this.cbbMaPN_SelectedIndexChanged);
             // 
             // lbHo
             // 
@@ -238,9 +252,9 @@
             this.lbHo.Location = new System.Drawing.Point(5, 56);
             this.lbHo.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lbHo.Name = "lbHo";
-            this.lbHo.Size = new System.Drawing.Size(64, 25);
+            this.lbHo.Size = new System.Drawing.Size(95, 25);
             this.lbHo.TabIndex = 6;
-            this.lbHo.Text = "Ngay:";
+            this.lbHo.Text = "Ngày lập:";
             this.lbHo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dateTimePicker
@@ -248,9 +262,10 @@
             this.dateTimePicker.Enabled = false;
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(123, 49);
+            this.dateTimePicker.Location = new System.Drawing.Point(123, 48);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(173, 30);
+            this.dateTimePicker.Size = new System.Drawing.Size(172, 30);
             this.dateTimePicker.TabIndex = 8;
             // 
             // lbMaNV
@@ -260,9 +275,9 @@
             this.lbMaNV.Location = new System.Drawing.Point(5, 10);
             this.lbMaNV.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(73, 25);
+            this.lbMaNV.Size = new System.Drawing.Size(93, 31);
             this.lbMaNV.TabIndex = 0;
-            this.lbMaNV.Text = "MaPN:";
+            this.lbMaNV.Text = "Mã phiếu nhập:";
             this.lbMaNV.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel2
@@ -274,12 +289,13 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textMaNV, 1, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(361, 24);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(361, 25);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(366, 90);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(365, 90);
             this.tableLayoutPanel2.TabIndex = 22;
             // 
             // cbbMasoDDH
@@ -287,11 +303,13 @@
             this.cbbMasoDDH.Enabled = false;
             this.cbbMasoDDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMasoDDH.FormattingEnabled = true;
-            this.cbbMasoDDH.Location = new System.Drawing.Point(158, 3);
+            this.cbbMasoDDH.Location = new System.Drawing.Point(157, 2);
+            this.cbbMasoDDH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbMasoDDH.Name = "cbbMasoDDH";
             this.cbbMasoDDH.Size = new System.Drawing.Size(203, 37);
             this.cbbMasoDDH.TabIndex = 25;
             this.cbbMasoDDH.SelectedIndexChanged += new System.EventHandler(this.cbbMasoDDH_SelectedIndexChanged);
+            this.cbbMasoDDH.SelectedValueChanged += new System.EventHandler(this.cbbMasoDDH_SelectedValueChanged);
             // 
             // label1
             // 
@@ -300,9 +318,9 @@
             this.label1.Location = new System.Drawing.Point(5, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 25);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Ma Nhan Vien:";
+            this.label1.Text = "Mã nhân viên:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -322,10 +340,10 @@
             this.textMaNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textMaNV.Enabled = false;
             this.textMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMaNV.Location = new System.Drawing.Point(160, 56);
+            this.textMaNV.Location = new System.Drawing.Point(159, 56);
             this.textMaNV.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.textMaNV.Name = "textMaNV";
-            this.textMaNV.Size = new System.Drawing.Size(201, 30);
+            this.textMaNV.Size = new System.Drawing.Size(199, 30);
             this.textMaNV.TabIndex = 7;
             // 
             // tableLayoutPanel3
@@ -338,11 +356,12 @@
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(15, 150);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(302, 90);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(301, 90);
             this.tableLayoutPanel3.TabIndex = 23;
             // 
             // cbbMaVT
@@ -351,19 +370,22 @@
             this.cbbMaVT.Enabled = false;
             this.cbbMaVT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaVT.FormattingEnabled = true;
-            this.cbbMaVT.Location = new System.Drawing.Point(126, 50);
+            this.cbbMaVT.Location = new System.Drawing.Point(125, 49);
+            this.cbbMaVT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbMaVT.Name = "cbbMaVT";
-            this.cbbMaVT.Size = new System.Drawing.Size(173, 37);
+            this.cbbMaVT.Size = new System.Drawing.Size(172, 37);
             this.cbbMaVT.TabIndex = 20;
+            this.cbbMaVT.SelectedIndexChanged += new System.EventHandler(this.cbbMaVT_SelectedIndexChanged);
             // 
             // cbbMaKho
             // 
             this.cbbMaKho.Enabled = false;
             this.cbbMaKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.cbbMaKho.FormattingEnabled = true;
-            this.cbbMaKho.Location = new System.Drawing.Point(126, 3);
+            this.cbbMaKho.Location = new System.Drawing.Point(125, 2);
+            this.cbbMaKho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbMaKho.Name = "cbbMaKho";
-            this.cbbMaKho.Size = new System.Drawing.Size(173, 37);
+            this.cbbMaKho.Size = new System.Drawing.Size(172, 37);
             this.cbbMaKho.TabIndex = 19;
             // 
             // label3
@@ -375,7 +397,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Ma vat tu:";
+            this.label3.Text = "Mã vật tư:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
@@ -387,7 +409,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Ma Kho:";
+            this.label4.Text = "Mã Kho:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel4
@@ -400,11 +422,12 @@
             this.tableLayoutPanel4.Controls.Add(this.textSL, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.textDG, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(361, 153);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(366, 90);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(365, 90);
             this.tableLayoutPanel4.TabIndex = 24;
             // 
             // label5
@@ -416,7 +439,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 25);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Don gia:";
+            this.label5.Text = "Đơn giá:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label6
@@ -428,7 +451,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 25);
             this.label6.TabIndex = 0;
-            this.label6.Text = "So luong:";
+            this.label6.Text = "Số lượng:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textSL
@@ -436,21 +459,22 @@
             this.textSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSL.Enabled = false;
             this.textSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSL.Location = new System.Drawing.Point(160, 10);
+            this.textSL.Location = new System.Drawing.Point(159, 10);
             this.textSL.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.textSL.Name = "textSL";
-            this.textSL.Size = new System.Drawing.Size(201, 30);
+            this.textSL.Size = new System.Drawing.Size(199, 30);
             this.textSL.TabIndex = 1;
+            this.textSL.TextChanged += new System.EventHandler(this.textSL_TextChanged);
             // 
             // textDG
             // 
             this.textDG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textDG.Enabled = false;
             this.textDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDG.Location = new System.Drawing.Point(160, 56);
+            this.textDG.Location = new System.Drawing.Point(159, 56);
             this.textDG.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.textDG.Name = "textDG";
-            this.textDG.Size = new System.Drawing.Size(201, 30);
+            this.textDG.Size = new System.Drawing.Size(199, 30);
             this.textDG.TabIndex = 7;
             // 
             // CTPNview
@@ -461,6 +485,7 @@
             this.CTPNview.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CTPNview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CTPNview.Location = new System.Drawing.Point(3, 272);
+            this.CTPNview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CTPNview.Name = "CTPNview";
             this.CTPNview.ReadOnly = true;
             this.CTPNview.RowHeadersWidth = 51;
@@ -470,21 +495,23 @@
             this.CTPNview.TabIndex = 38;
             this.CTPNview.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CTPNview_CellMouseClick);
             // 
-            // flowLayoutPanel1
+            // controlPanel3
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.undoBtn);
-            this.flowLayoutPanel1.Controls.Add(this.exitBtn);
-            this.flowLayoutPanel1.Controls.Add(this.refreshBtn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1439, 272);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(257, 289);
-            this.flowLayoutPanel1.TabIndex = 37;
+            this.controlPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlPanel3.Controls.Add(this.undoBtn);
+            this.controlPanel3.Controls.Add(this.exitBtn);
+            this.controlPanel3.Controls.Add(this.refreshBtn);
+            this.controlPanel3.Location = new System.Drawing.Point(1439, 272);
+            this.controlPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.controlPanel3.Name = "controlPanel3";
+            this.controlPanel3.Size = new System.Drawing.Size(257, 289);
+            this.controlPanel3.TabIndex = 37;
             // 
             // undoBtn
             // 
             this.undoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.undoBtn.Location = new System.Drawing.Point(3, 3);
+            this.undoBtn.Location = new System.Drawing.Point(3, 2);
+            this.undoBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Size = new System.Drawing.Size(253, 41);
             this.undoBtn.TabIndex = 3;
@@ -495,7 +522,8 @@
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(3, 50);
+            this.exitBtn.Location = new System.Drawing.Point(3, 47);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(253, 41);
             this.exitBtn.TabIndex = 5;
@@ -506,22 +534,14 @@
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(3, 97);
+            this.refreshBtn.Location = new System.Drawing.Point(3, 92);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(253, 41);
             this.refreshBtn.TabIndex = 4;
             this.refreshBtn.Text = "Reload";
             this.refreshBtn.UseVisualStyleBackColor = true;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(1489, 641);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 22);
-            this.textBox1.TabIndex = 36;
             // 
             // viewNhanVien
             // 
@@ -548,6 +568,7 @@
             this.viewNhanVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.viewNhanVien.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.viewNhanVien.Location = new System.Drawing.Point(0, 0);
+            this.viewNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewNhanVien.Name = "viewNhanVien";
             this.viewNhanVien.ReadOnly = true;
             this.viewNhanVien.RowHeadersWidth = 51;
@@ -562,19 +583,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.controlPanel1);
+            this.Controls.Add(this.controlPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CTPNview);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.controlPanel3);
             this.Controls.Add(this.viewNhanVien);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PhieuNhap";
-            this.Size = new System.Drawing.Size(1696, 856);
+            this.Size = new System.Drawing.Size(1696, 857);
             this.Load += new System.EventHandler(this.PhieuNhap_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PhieuNhap_MouseClick);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.controlPanel1.ResumeLayout(false);
+            this.controlPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -585,19 +606,18 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CTPNview)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.controlPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.viewNhanVien)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel controlPanel1;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel controlPanel2;
         private System.Windows.Forms.Button btnAddCTPN;
         private System.Windows.Forms.Button btnDelCTPN;
         private System.Windows.Forms.Button ghiBtn;
@@ -625,11 +645,10 @@
         private System.Windows.Forms.TextBox textSL;
         private System.Windows.Forms.TextBox textDG;
         private System.Windows.Forms.DataGridView CTPNview;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel controlPanel3;
         private System.Windows.Forms.Button undoBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button refreshBtn;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView viewNhanVien;
         private System.Windows.Forms.ComboBox cbbMaPN;
     }

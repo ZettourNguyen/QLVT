@@ -1,7 +1,9 @@
-﻿using System;
+﻿using QLVT.pnXprt;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +14,50 @@ namespace QLVT
 {
     public partial class FormChinh : Form
     {
+        private SqlConnection connPublisher = new SqlConnection();
 
         public FormChinh()
         {
             InitializeComponent();
         }
+        private void layDanhSachPhanManh(String cmd)
+        {
+            if (connPublisher.State == ConnectionState.Closed)
+            {
+                connPublisher.Open();
+            }
+            DataTable dt = new DataTable();
+            // adapter dùng để đưa dữ liệu từ view sang database
+            SqlDataAdapter da = new SqlDataAdapter(cmd, connPublisher);
+            // dùng adapter thì mới đổ vào data table được
+            da.Fill(dt);
 
+
+            connPublisher.Close();
+            Program.bindingSource.DataSource = dt;
+
+
+            cmbCHINHANH.DataSource = Program.bindingSource;
+            cmbCHINHANH.DisplayMember = "TENCN";
+            cmbCHINHANH.ValueMember = "TENSERVER";
+        }
+        private int KetNoiDatabaseGoc()
+        {
+            if (connPublisher != null && connPublisher.State == ConnectionState.Open)
+                connPublisher.Close();
+            try
+            {
+                connPublisher.ConnectionString = Program.connstrPublisher;
+                connPublisher.Open();
+                return 1;
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                return 0;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             QuanLyTk form = new QuanLyTk();
@@ -30,8 +70,8 @@ namespace QLVT
         {
             NhanVien form = new NhanVien();
             form.Dock = DockStyle.Fill;
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
         }
 
       
@@ -40,24 +80,24 @@ namespace QLVT
         {
             VatTu form = new VatTu();
             form.Dock = DockStyle.Fill;
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
         }
 
         private void btnKho_Click(object sender, EventArgs e)
         {
             Kho form = new Kho();
             form.Dock = DockStyle.Fill;
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
         }
 
         private void btnDDH_Click(object sender, EventArgs e)
         {
             donDatHang form = new donDatHang();
             form.Dock = DockStyle.Fill;
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
 
         }
 
@@ -65,16 +105,16 @@ namespace QLVT
         {
             PhieuNhap form = new PhieuNhap();
             form.Dock = DockStyle.Fill;
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
             PhieuXuat form = new PhieuXuat();
             form.Dock = DockStyle.Fill;
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -91,14 +131,16 @@ namespace QLVT
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             pnHETHONG.Controls.Clear();
             NhanVien form = new NhanVien();
             form.Dock = DockStyle.Fill;
             pnHETHONG.Controls.Add(pnControl);
-            pnHETHONG.Controls.Add(controlPn);
-
-            controlPn.Controls.Clear();
-            controlPn.Controls.Add(form);
+            
+            pnHETHONG.Controls.Add(pnTable);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
+            
         }
         public void enableButtons(int t)
         {
@@ -112,7 +154,25 @@ namespace QLVT
                 btnQuanLy.Enabled = true;
                 btnBaoCao.Enabled = true;
             }
-            
+            if (Program.role != "CONGTY")
+            {
+                cmbCHINHANH.Visible = false;
+            }
+            else
+            {
+                cmbCHINHANH.Visible = true;
+                try
+                {
+                    if (KetNoiDatabaseGoc() == 0)
+                        return;
+                    layDanhSachPhanManh("SELECT TOP 2 * FROM sp_GetSubscriptions");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
+            }
+
         }
 
         private void FormChinh_Load(object sender, EventArgs e)
@@ -121,7 +181,47 @@ namespace QLVT
             form.Dock = DockStyle.Fill;
             pnHETHONG.Controls.Clear();
             pnHETHONG.Controls.Add(form);
+
+            
+            
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void NHOM_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbCHINHANH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Program.serverName = cmbCHINHANH.SelectedValue.ToString();
+            Program.loginName = Program.remoteLogin;
+            Program.loginPassword = Program.remotePassword;
+            Program.KetNoi();
+            NhanVien form = new NhanVien();
+            form.Dock = DockStyle.Fill;
+            pnHETHONG.Controls.Remove(pnTable);
+            pnHETHONG.Controls.Add(pnTable);
+            pnTable.Controls.Clear();
+            pnTable.Controls.Add(form);
+        }
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            PnXprtSelection PnXprt = new PnXprtSelection();
+            pnHETHONG.Controls.Clear();
+            PnXprt.Dock = DockStyle.Fill;
+            pnHETHONG.Controls.Add(PnXprt);
+        }
+
+        private void pnControl_Paint(object sender, PaintEventArgs e)
+        {
             
         }
     }
+    
 }

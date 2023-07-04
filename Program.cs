@@ -3,6 +3,9 @@ using System.Data;
 using System.Windows.Forms;
 using System;
 using System.Text.RegularExpressions;
+using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Replication;
 
 namespace QLVT
 {
@@ -14,7 +17,7 @@ namespace QLVT
     * xuyên suốt thì phải khai báo tại đây
     * 
     * Data Source=DELL: tên server gốc
-    * Initial Catalog=QLVT_DATHANG: tên cơ sở dữ liệu
+    * Initial Catalog=QLVT: tên cơ sở dữ liệu
     * Integrated Security=true: đăng nhập với chế độ Window Authentication
     * 
     * public static = biến toàn cục dự án
@@ -28,7 +31,7 @@ namespace QLVT
          **********************************************/
         public static SqlConnection conn = new SqlConnection();//conn
         public static String connstr = "";//connstr
-        public static String connstrPublisher = "Data Source=LAPTOP-5KFMFC55;Initial Catalog=QLVT;Integrated Security=true";
+        public static String connstrPublisher = "Data Source=LAPTOP-5KFMFC55;;Initial Catalog=QLVT;Integrated Security=true";
         public static SqlDataReader myReader;//myReader
 
 
@@ -123,6 +126,8 @@ namespace QLVT
         public static string diaChi = "";
         public static string ngaySinh = "";
 
+        public static string chinhanhduocchon = "CN1";
+
         /*bidSou: BindingSource -> liên kết dữ liệu từ bảng dữ liệu vào chương trình*/
         public static BindingSource bindingSource = new BindingSource();//bds_dspm
 
@@ -137,11 +142,13 @@ namespace QLVT
         public static Kho formKho;
         //
         public static donDatHang formDonDatHang;
-        
+
         public static PhieuNhap formPhieuNhap;
         
         public static PhieuXuat formPhieuXuat;
-        
+        public static QuanLyTk formQuanLy;
+
+
         /*****************************************************
          * mở kết nối tới server 
          * @return trả về 1 nếu thành công
@@ -170,6 +177,8 @@ namespace QLVT
             }
         }
 
+        
+
 
         /**********************************************
          *  ExecSqlDataReader thực hiện câu lệnh mà dữ liệu trả về chỉ dùng
@@ -182,10 +191,11 @@ namespace QLVT
             SqlDataReader myreader;
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
             sqlcmd.CommandType = CommandType.Text;
-            if (Program.conn.State == ConnectionState.Closed)
-                Program.conn.Open();
+            
             try
             {
+                if (Program.conn.State == ConnectionState.Closed)
+                    Program.conn.Open();
                 myreader = sqlcmd.ExecuteReader(); return myreader;
 
             }
@@ -195,6 +205,7 @@ namespace QLVT
                 MessageBox.Show(ex.Message);
                 return null;
             }
+            
         }
 
 
@@ -239,13 +250,26 @@ namespace QLVT
 
             }
         }
+        public static string maCnToString()
+        {
+            if (serverName.Equals("LAPTOP-5KFMFC55\\SERVER1"))
+            {
+                return "CN1";
+            }
+            else
+            {
+                return "CN2";
+            }
+
+        }
+
         
 
 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
+/// <summary>
+/// The main entry point for the application.
+/// </summary>
+[STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

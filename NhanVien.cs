@@ -8,8 +8,10 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.Utils.MVVM.Internal.ILReader;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QLVT
@@ -18,6 +20,7 @@ namespace QLVT
     {
         Stack undoList = new Stack();
         string undoUpdateQuery;
+        string patternCMND = @"^(?!0)\d{10,}$";
 
         string connectionString = @"Data Source="+ Program.serverName + ";Initial Catalog=QLVT;Persist Security Info=True;User ID="+Program.loginName + ";Password="+ Program.loginPassword;
         SqlConnection con;
@@ -36,11 +39,14 @@ namespace QLVT
             viewNhanVien.Rows.Clear();
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
-
+            if (Program.role == "CONGTY")
+            {
+                controlPanel.Hide();
+            }
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT [MANV],[HO],[TEN],[SOCMND],[DIACHI],[NGAYSINH],[LUONG],[MACN],[trangthaixoa] FROM [NhanVien] ", con);
+                cmd = new SqlCommand("SELECT [MANV],[HO],[TEN],[SOCMND],[DIACHI],[NGAYSINH],[LUONG],[MACN] FROM [NhanVien] ", con);
                 adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
                 viewNhanVien.DataSource = dt;
@@ -82,13 +88,12 @@ namespace QLVT
                 textDiachi.Text = valueDIACHI;
                 dateTimePicker.Text =valueNGAYSINH;
                 textLuong.Text = valueLUONG;
-                textCN.Text = valueMACN;
+                _ = valueMACN.Trim() != "" ? textCN.Text = valueMACN.Trim() : textCN.Text = Program.chinhanhduocchon.Trim();
 
-                undoUpdateQuery = "update vattu set [ho] = '" + textHo.Text + "' , [ten] = '"
+                undoUpdateQuery = "update NhanVien set [HO] = '" + textHo.Text + "' , [TEN] = '"
                     + textTen.Text + "' , [SOCMND] = '" + textCMND.Text + "' , [DIACHI] = '" + textDiachi.Text + "' , [NGAYSINH] = '" + dateTimePicker.Text +
                     "' , [LUONG] = '" + textLuong.Text + "' , [MACN] = '" + textCN.Text +
-                    "' where [mavt] = '" + textMaNV.Text + "' ;";
-                textBox1.Text = undoUpdateQuery;
+                    "' where [MANV] = '" + textMaNV.Text + "' ;";
             }
         }
 
@@ -105,13 +110,9 @@ namespace QLVT
                 if (!reader.IsDBNull(0))
                 {
                     max = reader.GetInt32(0);
-                    max++;
-                    MessageBox.Show("Mã nhân viên lớn nhất: " + max);
+                    max = max +2;
                 }
-                else
-                {
-                    MessageBox.Show("Không có mã nhân viên trong bảng nhanvien.");
-                }
+
             }
             reader.Close();
 
@@ -121,40 +122,46 @@ namespace QLVT
                 // manv = manv cuoi + 1
                 
 
-
-                string query = "INSERT INTO NhanVien ([MANV],[HO],[TEN],[SOCMND],[DIACHI],[NGAYSINH],[LUONG],[MACN],[TrangThaiXoa]) VALUES (@value0, @value1, @value2, @value3, @value4, @value5, @value6, @value7, @value8)";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
-                cmd.Parameters.AddWithValue("@value0", max);
-                cmd.Parameters.AddWithValue("@value1", textHo.Text);
-                cmd.Parameters.AddWithValue("@value2", textTen.Text);
-                cmd.Parameters.AddWithValue("@value3", textCMND.Text);
-                cmd.Parameters.AddWithValue("@value4", textDiachi.Text);
-                cmd.Parameters.AddWithValue("@value5", dateTimePicker.Text);
-                if (int.Parse(textLuong.Text) >= 4000000)
+                if(Regex.IsMatch(textCMND.Text, patternCMND))
                 {
-                    cmd.Parameters.AddWithValue("@value6", textLuong.Text);
-                }
-                else
-                {
-                    MessageBox.Show("Thêm dữ liệu không thành công \n Luong>=4000000");
-                }
-                cmd.Parameters.AddWithValue("@value7", textCN.Text);
-                cmd.Parameters.AddWithValue("@value8", '0');
-                cmd.ExecuteNonQuery();
-                transaction.Commit();
-                MessageBox.Show("them thanh cong");
+                    string query = "INSERT INTO NhanVien ([MANV],[HO],[TEN],[SOCMND],[DIACHI],[NGAYSINH],[LUONG],[MACN],[TrangThaiXoa]) VALUES (@value0, @value1, @value2, @value3, @value4, @value5, @value6, @value7, @value8)";
+                    SqlCommand cmd = new SqlCommand(query, con, transaction);
+                    cmd.Parameters.AddWithValue("@value0", max);
+                    cmd.Parameters.AddWithValue("@value1", textHo.Text);
+                    cmd.Parameters.AddWithValue("@value2", textTen.Text);
+                    cmd.Parameters.AddWithValue("@value3", textCMND.Text);
+                    cmd.Parameters.AddWithValue("@value4", textDiachi.Text);
+                    cmd.Parameters.AddWithValue("@value5", dateTimePicker.Text);
+                    if (int.Parse(textLuong.Text) >= 4000000)
+                    {
+                        cmd.Parameters.AddWithValue("@value6", textLuong.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm dữ liệu không thành công \n Luong>=4000000");
+                    }
+                    cmd.Parameters.AddWithValue("@value7", Program.chinhanhduocchon);
+                    cmd.Parameters.AddWithValue("@value8", '0');
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                    MessageBox.Show("Thêm nhân viên thành công!");
 
-                // undo push query
-                String cauTruyVanHoanTac = "";
-                cauTruyVanHoanTac = "" + "DELETE nhanvien " + "WHERE manv = '" + textMaNV.Text.Trim() + "'";
-                undoList.Push(cauTruyVanHoanTac);
-                undoBtn.Enabled = true;
+                    // undo push query
+                    String cauTruyVanHoanTac = "";
+                    cauTruyVanHoanTac = "" + "DELETE nhanvien " + "WHERE manv = '" + max.ToString() + "'";
+                    undoList.Push(cauTruyVanHoanTac);
+                    undoBtn.Enabled = true;
+                } else
+                {
+                    MessageBox.Show("Số chứng minh nhân nhân không hợp lệ!");
+                }
+
+                
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
-                MessageBox.Show("them that bai", ex.Message);
-                textBox1.Text = ex.Message;
+                MessageBox.Show(ex.Message, "Thông báo thêm thất bại!");
             }
             con.Close();
 
@@ -167,33 +174,39 @@ namespace QLVT
 
             try
             {
-                string query = "UPDATE NhanVien SET [HO] = @value1,[TEN] = @value2,[SOCMND] = @value3,[DIACHI] = @value4,[NGAYSINH] = @value5,[LUONG] = @value6,[MACN] = @value7 WHERE[manv] = @value0;";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
-                cmd.Parameters.AddWithValue("@value0", textMaNV.Text);
-                cmd.Parameters.AddWithValue("@value1", textHo.Text);
-                cmd.Parameters.AddWithValue("@value2", textTen.Text);
-                cmd.Parameters.AddWithValue("@value3", textCMND.Text);
-                cmd.Parameters.AddWithValue("@value4", textDiachi.Text);
-                cmd.Parameters.AddWithValue("@value5", dateTimePicker.Text);
-
-                if (int.Parse(textLuong.Text) >= 4000000)
+                if (Regex.IsMatch(textCMND.Text.Trim(), patternCMND))
                 {
-                    cmd.Parameters.AddWithValue("@value6", textLuong.Text);
-                }
-                else
-                {
-                    MessageBox.Show("Thêm dữ liệu không thành công \n Luong>=4000000");
-                }
-                cmd.Parameters.AddWithValue("@value7", textCN.Text);
-                cmd.ExecuteNonQuery();
-                transaction.Commit();
-                MessageBox.Show("update thanh cong");
+                    string query = "UPDATE NhanVien SET [HO] = @value1,[TEN] = @value2,[SOCMND] = @value3,[DIACHI] = @value4,[NGAYSINH] = @value5,[LUONG] = @value6,[MACN] = @value7 WHERE[manv] = @value0;";
+                    SqlCommand cmd = new SqlCommand(query, con, transaction);
+                    cmd.Parameters.AddWithValue("@value0", textMaNV.Text.Trim());
+                    cmd.Parameters.AddWithValue("@value1", textHo.Text);
+                    cmd.Parameters.AddWithValue("@value2", textTen.Text);
+                    cmd.Parameters.AddWithValue("@value3", textCMND.Text.Trim());
+                    cmd.Parameters.AddWithValue("@value4", textDiachi.Text);
+                    cmd.Parameters.AddWithValue("@value5", dateTimePicker.Text);
 
-                // undo push query
-                String cauTruyVanHoanTac = undoUpdateQuery;
+                    if (int.Parse(textLuong.Text) >= 4000000)
+                    {
+                        cmd.Parameters.AddWithValue("@value6", textLuong.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm dữ liệu không thành công \n Luong>=4000000");
+                    }
+                    cmd.Parameters.AddWithValue("@value7", textCN.Text);
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                    MessageBox.Show("Cập nhật thành công");
+
+                    // undo push query
+                    String cauTruyVanHoanTac = undoUpdateQuery;
+
+                    undoList.Push(cauTruyVanHoanTac);
+                } else
+                {
+                    MessageBox.Show("Số chứng minh nhân nhân không hợp lệ!");
+                }
                 
-                textBox1.Text = cauTruyVanHoanTac;
-                undoList.Push(cauTruyVanHoanTac);
 
                 
 
@@ -201,8 +214,7 @@ namespace QLVT
             catch (Exception ex)
             {
                 transaction.Rollback();
-                MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
+                MessageBox.Show(ex.Message,"Cập nhật thất bại!");
             }
             con.Close();
         }
@@ -253,7 +265,7 @@ namespace QLVT
                     cmd.Parameters.AddWithValue("@value8", '1');
                     cmd.ExecuteNonQuery();
                     transaction.Commit();
-                    MessageBox.Show("Xoa thanh cong");
+                    MessageBox.Show("Xóa thành công");
 
                     String cauTruyVanHoanTac = "";
                     cauTruyVanHoanTac = "update nhanvien set [trangthaixoa] = 0 where [manv] = '" + textMaNV.Text + "' ;"; ;
@@ -264,8 +276,7 @@ namespace QLVT
                 catch (Exception ex)
                 {
                     transaction.Rollback();
-                    MessageBox.Show("Xoa that bai");
-                    textBox1.Text = ex.ToString();
+                    MessageBox.Show("Xóa thất bại!");
                 }
                 con.Close();
             }
@@ -304,9 +315,8 @@ namespace QLVT
                 catch (Exception ex)
                 {
                     transaction.Rollback();
-                    MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
@@ -315,6 +325,16 @@ namespace QLVT
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Program.brand.ToString());
         }
     }
 }

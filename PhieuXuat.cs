@@ -28,6 +28,7 @@ namespace QLVT
         string action = "";
         string oldMAVT = "";
 
+        int oldQuantity = 0;
         public PhieuXuat()
         {
             InitializeComponent();
@@ -48,6 +49,13 @@ namespace QLVT
             viewNhanVien.Rows.Clear();
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
+
+            if (Program.role == "CONGTY")
+            {
+                controlPanel1.Hide();
+                controlPanel2.Hide();
+                controlPanel3.Hide();
+            }
             try
             {
                 con.Open();
@@ -373,13 +381,7 @@ namespace QLVT
                 cmd.Parameters.AddWithValue("@VALUEMAKHO", cbbMaKho.Text.Trim());
                 cmd.ExecuteNonQuery();
                 // THEM VAO CTDDH
-                string queryCTDDH = "INSERT INTO CTPX ([MAPX],[MAVT],[SOLUONG],[DONGIA]) VALUES (@valueMAPX, @valueMAVT, @valueSL, @valueDG)";
-                SqlCommand cmdCTDDH = new SqlCommand(queryCTDDH, con, transaction);
-                cmdCTDDH.Parameters.AddWithValue("@valueMAPX", cbbMaPX.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueMAVT", cbbMaVT.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueSL", textSL.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueDG", textDG.Text.Trim());
-                cmdCTDDH.ExecuteNonQuery();
+                
 
                 transaction.Commit();
                 MessageBox.Show("them thanh cong");
@@ -412,7 +414,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("them that bai", ex.Message);
-                textBox1.Text = ex.Message;
             }
             con.Close();
 
@@ -421,19 +422,18 @@ namespace QLVT
         private void themCTPX()
         {
             con.Open();
-            SqlTransaction transaction = con.BeginTransaction();
 
             try
             {
-                string queryCTDDH = "INSERT INTO CTPX ([MAPX],[MAVT],[SOLUONG],[DONGIA]) VALUES (@valueMAPX, @valueMAVT, @valueSL, @valueDG)";
-                SqlCommand cmdCTDDH = new SqlCommand(queryCTDDH, con, transaction);
-                cmdCTDDH.Parameters.AddWithValue("@valueMAPX", cbbMaPX.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueMAVT", cbbMaVT.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueSL", textSL.Text.Trim());
-                cmdCTDDH.Parameters.AddWithValue("@valueDG", textDG.Text.Trim());
+
+                SqlCommand cmdCTDDH = new SqlCommand("AddChiTietPhieuXuat", con);
+                cmdCTDDH.CommandType = CommandType.StoredProcedure;
+                cmdCTDDH.Parameters.AddWithValue("@MAPX", cbbMaPX.Text.Trim());
+                cmdCTDDH.Parameters.AddWithValue("@MAVT", cbbMaVT.Text.Trim());
+                cmdCTDDH.Parameters.AddWithValue("@SOLUONG", textSL.Text.Trim());
+                cmdCTDDH.Parameters.AddWithValue("@DONGIA", textDG.Text.Trim());
                 cmdCTDDH.ExecuteNonQuery();
 
-                transaction.Commit();
                 MessageBox.Show("them thanh cong");
 
                 btnOK.Visible = false;
@@ -457,14 +457,11 @@ namespace QLVT
 
                 cauTruyVanHoanTac = "" + "DELETE CTPX " + "WHERE [MAPX] = '" + cbbMaPX.Text.Trim() + "' AND MAVT = '" + cbbMaVT.Text.Trim() + "';";
                 undoList.Push(cauTruyVanHoanTac);
-                textBox1.Text = cauTruyVanHoanTac;
 
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
-                MessageBox.Show("them that bai", ex.Message);
-                textBox1.Text = ex.Message;
+                MessageBox.Show(ex.Message, "Thông báo");
             }
             con.Close();
         }
@@ -472,29 +469,64 @@ namespace QLVT
         {
             con.Open();
             SqlTransaction transaction = con.BeginTransaction();
+            
             try
             {
-                string query = "UPDATE CTPX SET [SOLUONG] = @value1, [DONGIA] = @value2, [MAVT] = @value3  WHERE [MAPX] = @value0 and [MAVT] = @value01;";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
-                cmd.Parameters.AddWithValue("@value1", textSL.Text.Trim());
-                cmd.Parameters.AddWithValue("@value2", textDG.Text.Trim());
-                cmd.Parameters.AddWithValue("@value3", cbbMaVT.Text.Trim());
-                cmd.Parameters.AddWithValue("@value01", oldMAVT.Trim());
-                cmd.Parameters.AddWithValue("@value0", cbbMaPX.Text.Trim());
-                cmd.ExecuteNonQuery();
-                transaction.Commit();
-                MessageBox.Show("update thanh cong");
+                string getSoLuong = "SELECT SOLUONGTON FROM Vattu  WHERE MAVT = @mavt";
+                SqlCommand cmd2 = new SqlCommand(getSoLuong, con, transaction);
+                cmd2.Parameters.AddWithValue("@mavt", cbbMaVT.Text.Trim());
+                object result = cmd2.ExecuteScalar();
+                if (result != null)
+                {
+                    int soluong = Convert.ToInt32(result);
+                    if(soluong + int.Parse(textSL.Text.Trim()) > int.Parse(textSL.Text.Trim())) {
+                        string query = "UPDATE CTPX SET [SOLUONG] = @value1, [DONGIA] = @value2, [MAVT] = @value3  WHERE [MAPX] = @value0 and [MAVT] = @value01;";
+                        SqlCommand cmd = new SqlCommand(query, con, transaction);
+                        cmd.Parameters.AddWithValue("@value1", textSL.Text.Trim());
+                        cmd.Parameters.AddWithValue("@value2", textDG.Text.Trim());
+                        cmd.Parameters.AddWithValue("@value3", cbbMaVT.Text.Trim());
+                        cmd.Parameters.AddWithValue("@value01", oldMAVT.Trim());
+                        cmd.Parameters.AddWithValue("@value0", cbbMaPX.Text.Trim());
+                        cmd.ExecuteNonQuery();
+                        transaction.Commit();
+                        MessageBox.Show("update thanh cong");
 
-                //undo
-                String cauTruyVanHoanTac = undoUpdateQueryCTPX + cbbMaVT.Text + "';";
-                textBox1.Text = cauTruyVanHoanTac;
-                undoList.Push(cauTruyVanHoanTac);
+                        int chenhlech = oldQuantity - int.Parse(textSL.Text.Trim());
+
+                        if (chenhlech > 0)
+                        {
+                            SqlCommand cmd4 = new SqlCommand("UPDATE Vattu set SOLUONGTON = SOLUONGTON + @soLuong WHERE MAVT = @valueMaVT", con);
+                            cmd4.Parameters.AddWithValue("@valueMaVT", cbbMaVT.Text.Trim());
+                            cmd4.Parameters.AddWithValue("@soLuong", chenhlech.ToString());
+                            cmd4.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            SqlCommand cmd4 = new SqlCommand("UPDATE Vattu set SOLUONGTON = SOLUONGTON - @soLuong WHERE MAVT = @valueMaVT", con);
+                            cmd4.Parameters.AddWithValue("@valueMaVT", cbbMaVT.Text.Trim());
+                            cmd4.Parameters.AddWithValue("@soLuong", Math.Abs(chenhlech).ToString());
+                            cmd4.ExecuteNonQuery();
+                        }
+
+                        //undo
+                        String cauTruyVanHoanTac = undoUpdateQueryCTPX + cbbMaVT.Text + "';";
+                        undoList.Push(cauTruyVanHoanTac);
+                    }else
+                    {
+                        MessageBox.Show("Số lượng lớn hơn số lượng tồn trong kho!", "Thông báo");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("No data found.", "Thông báo!");
+                }
+                
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
-                MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
+                MessageBox.Show(ex.Message, "Cập nhật thất bại!");
             }
             con.Close();
         }
@@ -525,7 +557,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }
@@ -597,7 +628,6 @@ namespace QLVT
                     "VALUES ('" + cbbMaPX.Text + "', '" + cbbMaVT.Text + "', " + textSL.Text + ", '" + textDG.Text + "')";
 
                     undoList.Push(cauTruyVanHoanTac);
-                    textBox1.Text = cauTruyVanHoanTac;
                 }
                 catch (Exception ex)
                 {
@@ -622,6 +652,11 @@ namespace QLVT
                         cmd.Parameters.AddWithValue("@valuePX", cbbMaPX.Text.Trim());
                         cmd.Parameters.AddWithValue("@valueVT", cbbMaVT.Text.Trim());
                         cmd.ExecuteNonQuery();
+
+                        SqlCommand updateVattu = new SqlCommand("UPDATE Vattu SET SOLUONGTON = SOLUONGTON + @soluong  WHERE MAVT = @valueVT", con, trans);
+                        updateVattu.Parameters.AddWithValue("@valueVT", cbbMaVT.Text.Trim());
+                        updateVattu.Parameters.AddWithValue("@soluong", textSL.Text.Trim());
+                        updateVattu.ExecuteNonQuery();
                         trans.Commit();
                         MessageBox.Show("Xoa thành công", "Thông báo", MessageBoxButtons.OK);
 
@@ -629,11 +664,12 @@ namespace QLVT
                         String cauTruyVanHoanTac = "";
                         cauTruyVanHoanTac = "INSERT INTO CTPX ([MAPX], [MAVT], [SOLUONG], [DONGIA]) " +
                 "VALUES ('" + cbbMaPX.Text + "', '" + cbbMaVT.Text + "', " + textSL.Text + ", '" + textDG.Text + "')";
+                        String cauTruyVanHoanTac2 = "UPDATE Vattu set SOLUONGTON = SOLUONGTON - " + textSL.Text + " WHERE MAVT = " + cbbMaVT.Text.Trim();
                         undoList.Push(cauTruyVanHoanTac);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Xoa that bai", "Thông báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Xoa that bai" + ex, "Thông báo", MessageBoxButtons.OK);
                     }
                     con.Close();
                 }
@@ -659,6 +695,7 @@ namespace QLVT
 
         private void btnGhiCTPX_Click(object sender, EventArgs e)
         {
+            oldQuantity = int.Parse(textSL.Text.Trim());
             cbbMaVT.Enabled = true;
             textSL.Enabled = true; textDG.Enabled = true;
             action = "EditCTPX";
@@ -698,7 +735,6 @@ namespace QLVT
                     transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
@@ -751,6 +787,11 @@ namespace QLVT
                 undoBtn.Enabled = false;
             }
             else { undoBtn.Enabled = true; }
+        }
+
+        private void textSL_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

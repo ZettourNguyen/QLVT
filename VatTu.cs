@@ -38,6 +38,11 @@ namespace QLVT
             viewNhanVien.Columns.Clear();
             viewNhanVien.Refresh();
 
+            if(Program.role == "CONGTY")
+            {
+                editPanel.Hide();
+            }
+
             try
             {
                 con.Open();
@@ -61,34 +66,39 @@ namespace QLVT
 
         private void themBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlTransaction transaction = con.BeginTransaction();
-            try
+            if(textMaVT.Text == "" || textTenVT.Text== "" || textSLT.Text == "" || textDVT.Text=="")
             {
-                string query = "INSERT INTO vattu ([MAVT], [TENVT],[SOLUONGTON],[DVT]) values (@value0, @value1, @value2, @value3)";
-                SqlCommand cmd = new SqlCommand(query, con, transaction);
-                cmd.Parameters.AddWithValue("@value0", textMaVT.Text);
-                cmd.Parameters.AddWithValue("@value1", textTenVT.Text);
-                cmd.Parameters.AddWithValue("@value2", textSLT.Text);
-                cmd.Parameters.AddWithValue("@value3", textDVT.Text);
-                cmd.ExecuteNonQuery();
-                transaction.Commit();
-                MessageBox.Show("Them thành công", "Thông báo", MessageBoxButtons.OK);
-
-
-                String cauTruyVanHoanTac = "";
-                cauTruyVanHoanTac = "" + "DELETE DBO.vattu " + "WHERE mavt = '" + textMaVT.Text.Trim() + "'";
-                undoList.Push(cauTruyVanHoanTac);
-
-            }
-            catch (Exception ex)
+                MessageBox.Show("Một số thông tin đang bị để trống!", "Thêm vật tư thất bại!");
+            } else
             {
-                transaction.Rollback();
-                MessageBox.Show("them that bai");
-                textBox1.Text = ex.ToString();
+                con.Open();
+                SqlTransaction transaction = con.BeginTransaction();
+                try
+                {
+                    string query = "INSERT INTO vattu ([MAVT], [TENVT],[SOLUONGTON],[DVT]) values (@value0, @value1, @value2, @value3)";
+                    SqlCommand cmd = new SqlCommand(query, con, transaction);
+                    cmd.Parameters.AddWithValue("@value0", textMaVT.Text);
+                    cmd.Parameters.AddWithValue("@value1", textTenVT.Text);
+                    cmd.Parameters.AddWithValue("@value2", textSLT.Text);
+                    cmd.Parameters.AddWithValue("@value3", textDVT.Text);
+                    cmd.ExecuteNonQuery();
+                    transaction.Commit();
+                    MessageBox.Show("Them thành công", "Thông báo", MessageBoxButtons.OK);
+
+
+                    String cauTruyVanHoanTac = "";
+                    cauTruyVanHoanTac = "" + "DELETE DBO.vattu " + "WHERE mavt = '" + textMaVT.Text.Trim() + "'";
+                    undoList.Push(cauTruyVanHoanTac);
+
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show(ex.ToString(), "Thêm vật tư thất bại!");
+                }
+                con.Close();
+                undoBtn.Enabled = true;
             }
-            con.Close();
-            undoBtn.Enabled = true;
         }
 
         private void viewNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -109,7 +119,6 @@ namespace QLVT
 
                 undoUpdateQuery = "update vattu set [TENVT] = '" + textTenVT.Text + "' , [SOLUONGTON] = '"
                     + textSLT.Text + "' , [DVT] = '" + textSLT.Text + "' where [mavt] = '" + textMaVT.Text + "' ;";
-                textBox1.Text += undoUpdateQuery;
             }
         }
 
@@ -139,7 +148,6 @@ namespace QLVT
                     transaction.Rollback();
                     MessageBox.Show("undo that bai", "Thông báo", MessageBoxButtons.OK);
 
-                    textBox1.Text = ex.ToString();
                 }
                 con.Close();
             }
@@ -170,7 +178,6 @@ namespace QLVT
                 catch (Exception ex)
                 {
                     MessageBox.Show("Xoa that bai", "Thông báo", MessageBoxButtons.OK);
-                    textBox1.Text = ex.Message;
                 }
                 con.Close();
             }
@@ -202,7 +209,6 @@ namespace QLVT
             {
                 transaction.Rollback();
                 MessageBox.Show("update that bai");
-                textBox1.Text = ex.ToString();
             }
             con.Close();
         }
@@ -243,9 +249,10 @@ namespace QLVT
 
         }
 
-        
+        private void viewNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        
+        }
     }
     }
 

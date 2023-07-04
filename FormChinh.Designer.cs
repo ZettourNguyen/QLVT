@@ -30,7 +30,7 @@
         private void InitializeComponent()
         {
             this.pnHETHONG = new System.Windows.Forms.Panel();
-            this.controlPn = new System.Windows.Forms.Panel();
+            this.pnTable = new System.Windows.Forms.Panel();
             this.pnControl = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.bntVatTu = new System.Windows.Forms.Button();
@@ -38,6 +38,7 @@
             this.btnDDH = new System.Windows.Forms.Button();
             this.btnNhap = new System.Windows.Forms.Button();
             this.btnXuat = new System.Windows.Forms.Button();
+            this.cmbCHINHANH = new System.Windows.Forms.ComboBox();
             this.MANHANVIEN = new System.Windows.Forms.Label();
             this.HOTEN = new System.Windows.Forms.Label();
             this.NHOM = new System.Windows.Forms.Label();
@@ -58,23 +59,25 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnHETHONG.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnHETHONG.Controls.Add(this.controlPn);
+            this.pnHETHONG.Controls.Add(this.pnTable);
             this.pnHETHONG.Controls.Add(this.pnControl);
             this.pnHETHONG.Location = new System.Drawing.Point(-3, 47);
+            this.pnHETHONG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnHETHONG.Name = "pnHETHONG";
             this.pnHETHONG.Size = new System.Drawing.Size(1368, 570);
             this.pnHETHONG.TabIndex = 0;
             this.pnHETHONG.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // controlPn
+            // pnTable
             // 
-            this.controlPn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlPn.Location = new System.Drawing.Point(3, 82);
-            this.controlPn.Name = "controlPn";
-            this.controlPn.Size = new System.Drawing.Size(1362, 468);
-            this.controlPn.TabIndex = 2;
+            this.pnTable.Location = new System.Drawing.Point(3, 82);
+            this.pnTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTable.Name = "pnTable";
+            this.pnTable.Size = new System.Drawing.Size(1363, 481);
+            this.pnTable.TabIndex = 2;
             // 
             // pnControl
             // 
@@ -87,9 +90,11 @@
             this.pnControl.Controls.Add(this.btnDDH);
             this.pnControl.Controls.Add(this.btnNhap);
             this.pnControl.Controls.Add(this.btnXuat);
-            this.pnControl.Location = new System.Drawing.Point(3, 3);
+            this.pnControl.Controls.Add(this.cmbCHINHANH);
+            this.pnControl.Location = new System.Drawing.Point(3, 2);
+            this.pnControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnControl.Name = "pnControl";
-            this.pnControl.Size = new System.Drawing.Size(1362, 77);
+            this.pnControl.Size = new System.Drawing.Size(1363, 78);
             this.pnControl.TabIndex = 1;
             // 
             // btnNhanVien
@@ -105,7 +110,7 @@
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(176, 76);
             this.btnNhanVien.TabIndex = 0;
-            this.btnNhanVien.Text = "Nhan Vien";
+            this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.UseVisualStyleBackColor = false;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click_1);
             // 
@@ -122,7 +127,7 @@
             this.bntVatTu.Name = "bntVatTu";
             this.bntVatTu.Size = new System.Drawing.Size(176, 76);
             this.bntVatTu.TabIndex = 1;
-            this.bntVatTu.Text = "Vat Tu";
+            this.bntVatTu.Text = "Vật tư";
             this.bntVatTu.UseVisualStyleBackColor = false;
             this.bntVatTu.Click += new System.EventHandler(this.bntVatTu_Click);
             // 
@@ -173,7 +178,7 @@
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(176, 76);
             this.btnNhap.TabIndex = 4;
-            this.btnNhap.Text = "PhieuNhap";
+            this.btnNhap.Text = "Phiếu nhập";
             this.btnNhap.UseVisualStyleBackColor = false;
             this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
@@ -190,15 +195,30 @@
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(176, 76);
             this.btnXuat.TabIndex = 5;
-            this.btnXuat.Text = "phieuXuat";
+            this.btnXuat.Text = "Phiếu xuất";
             this.btnXuat.UseVisualStyleBackColor = false;
             this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
+            // cmbCHINHANH
+            // 
+            this.cmbCHINHANH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCHINHANH.DisplayMember = "0";
+            this.cmbCHINHANH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCHINHANH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbCHINHANH.FormattingEnabled = true;
+            this.cmbCHINHANH.Location = new System.Drawing.Point(1059, 2);
+            this.cmbCHINHANH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCHINHANH.Name = "cmbCHINHANH";
+            this.cmbCHINHANH.Size = new System.Drawing.Size(287, 33);
+            this.cmbCHINHANH.TabIndex = 6;
+            this.cmbCHINHANH.SelectedIndexChanged += new System.EventHandler(this.cmbCHINHANH_SelectedIndexChanged);
             // 
             // MANHANVIEN
             // 
             this.MANHANVIEN.AutoSize = true;
             this.MANHANVIEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.MANHANVIEN.Location = new System.Drawing.Point(22, 4);
+            this.MANHANVIEN.Location = new System.Drawing.Point(21, 4);
             this.MANHANVIEN.Name = "MANHANVIEN";
             this.MANHANVIEN.Size = new System.Drawing.Size(151, 25);
             this.MANHANVIEN.TabIndex = 0;
@@ -208,7 +228,7 @@
             // 
             this.HOTEN.AutoSize = true;
             this.HOTEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.HOTEN.Location = new System.Drawing.Point(398, 7);
+            this.HOTEN.Location = new System.Drawing.Point(397, 7);
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Size = new System.Drawing.Size(82, 25);
             this.HOTEN.TabIndex = 1;
@@ -223,6 +243,7 @@
             this.NHOM.Size = new System.Drawing.Size(73, 25);
             this.NHOM.TabIndex = 2;
             this.NHOM.Text = "NHOM";
+            this.NHOM.TextChanged += new System.EventHandler(this.NHOM_TextChanged);
             // 
             // panel2
             // 
@@ -232,9 +253,10 @@
             this.panel2.Controls.Add(this.NHOM);
             this.panel2.Controls.Add(this.HOTEN);
             this.panel2.Controls.Add(this.MANHANVIEN);
-            this.panel2.Location = new System.Drawing.Point(0, 616);
+            this.panel2.Location = new System.Drawing.Point(0, 615);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1362, 36);
+            this.panel2.Size = new System.Drawing.Size(1363, 36);
             this.panel2.TabIndex = 0;
             // 
             // hethong
@@ -248,9 +270,9 @@
             this.hethong.Location = new System.Drawing.Point(0, 0);
             this.hethong.Margin = new System.Windows.Forms.Padding(0);
             this.hethong.Name = "hethong";
-            this.hethong.Size = new System.Drawing.Size(146, 46);
+            this.hethong.Size = new System.Drawing.Size(147, 46);
             this.hethong.TabIndex = 6;
-            this.hethong.Text = "hethong";
+            this.hethong.Text = "Hệ thống";
             this.hethong.UseVisualStyleBackColor = false;
             this.hethong.Click += new System.EventHandler(this.hethong_Click);
             // 
@@ -260,9 +282,11 @@
             this.flowLayoutPanel2.Controls.Add(this.btnQuanLy);
             this.flowLayoutPanel2.Controls.Add(this.btnBaoCao);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, -2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1197, 49);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1068, 49);
             this.flowLayoutPanel2.TabIndex = 0;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // btnQuanLy
             // 
@@ -273,12 +297,12 @@
             this.btnQuanLy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnQuanLy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLy.Location = new System.Drawing.Point(146, 0);
+            this.btnQuanLy.Location = new System.Drawing.Point(147, 0);
             this.btnQuanLy.Margin = new System.Windows.Forms.Padding(0);
             this.btnQuanLy.Name = "btnQuanLy";
-            this.btnQuanLy.Size = new System.Drawing.Size(146, 46);
+            this.btnQuanLy.Size = new System.Drawing.Size(147, 46);
             this.btnQuanLy.TabIndex = 7;
-            this.btnQuanLy.Text = "Quan Ly";
+            this.btnQuanLy.Text = "Quản lý";
             this.btnQuanLy.UseVisualStyleBackColor = false;
             this.btnQuanLy.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -291,23 +315,25 @@
             this.btnBaoCao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCao.Location = new System.Drawing.Point(292, 0);
+            this.btnBaoCao.Location = new System.Drawing.Point(294, 0);
             this.btnBaoCao.Margin = new System.Windows.Forms.Padding(0);
             this.btnBaoCao.Name = "btnBaoCao";
-            this.btnBaoCao.Size = new System.Drawing.Size(146, 46);
+            this.btnBaoCao.Size = new System.Drawing.Size(147, 46);
             this.btnBaoCao.TabIndex = 8;
-            this.btnBaoCao.Text = "BaoCao";
+            this.btnBaoCao.Text = "Báo biểu";
             this.btnBaoCao.UseVisualStyleBackColor = false;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // FormChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1361, 653);
+            this.ClientSize = new System.Drawing.Size(1361, 654);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.pnHETHONG);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormChinh";
             this.Text = "Trang Chu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -328,7 +354,7 @@
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button bntVatTu;
         private System.Windows.Forms.Button btnKho;
-        private System.Windows.Forms.Panel controlPn;
+        private System.Windows.Forms.Panel pnTable;
         private System.Windows.Forms.Button btnDDH;
         private System.Windows.Forms.Button btnNhap;
         private System.Windows.Forms.Button btnXuat;
@@ -340,6 +366,7 @@
         private System.Windows.Forms.Button btnQuanLy;
         private System.Windows.Forms.Button btnBaoCao;
         public System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cmbCHINHANH;
     }
 }
 
